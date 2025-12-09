@@ -12,6 +12,7 @@ import './styles/contact.css'
 import './styles/quote.css'
 import './styles/careers.css'
 import './styles/legal.css'
+import './styles/portfolio.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
