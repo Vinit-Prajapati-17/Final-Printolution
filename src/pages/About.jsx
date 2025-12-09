@@ -45,7 +45,7 @@ function About() {
               </div>
               <div className="bottom">
                 <div className="content">
-                  <span className="name">Rutvi Vekariya</span>
+                  <span className="name">Rutu Vekariya</span>
                   <span className="about-me">Co-Founder & Creative Director. Visionary leader with a passion for design excellence and innovation in print media.</span>
                 </div>
                 <div className="bottom-bottom">
