@@ -1,0 +1,556 @@
+/* About Page Styles */
+
+.page-hero {
+    background: var(--charcoal);
+    color: white;
+    text-align: center;
+    padding: 120px 0 80px;
+}
+
+.page-hero h1 {
+    margin-bottom: 16px;
+    color: white;
+}
+
+.page-hero p {
+    font-size: 20px;
+    color: var(--muted-gray);
+}
+
+/* Our Story */
+.our-story {
+    background: white;
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.story-text h2 {
+    margin-bottom: 24px;
+}
+
+.story-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: var(--muted-gray);
+}
+
+.story-text p:last-child {
+    margin-bottom: 0;
+}
+
+.story-image {
+    position: relative;
+}
+
+.image-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #f0f0f0;
+    border-radius: var(--radius);
+}
+
+/* Founders */
+.founders {
+    background: var(--off-white);
+}
+
+.founders-grid {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    margin-top: 64px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 360px;
+    height: 400px;
+    background: white;
+    border-radius: 32px;
+    padding: 4px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.card .mail {
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.card .mail svg {
+    stroke: #000000;
+    stroke-width: 2.5px;
+    width: 28px;
+    height: 28px;
+}
+
+.card .mail svg:hover {
+    stroke: var(--accent-yellow);
+}
+
+.card .profile-pic {
+    position: absolute;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    top: 4px;
+    left: 4px;
+    border-radius: 28px;
+    z-index: 1;
+    border: 0px solid #000000;
+    overflow: hidden;
+    background: #f5f5f5;
+    transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+}
+
+.card .profile-pic img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center center;
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.card .profile-pic svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0px 0px;
+    transform-origin: 45% 20%;
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.card .bottom {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    background: #000000;
+    top: 78%;
+    border-radius: 28px;
+    z-index: 2;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+.card .bottom .content {
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    right: 2rem;
+    height: 240px;
+}
+
+.card .bottom .content .name {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--accent-yellow);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card .bottom .content .about-me {
+    display: block;
+    font-size: 1rem;
+    color: #FFFFFF;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+.card .bottom .bottom-bottom {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card .bottom .bottom-bottom .social-links-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.card .bottom .bottom-bottom .social-links-container svg {
+    height: 24px;
+    fill: #FFFFFF;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card .bottom .bottom-bottom .social-links-container svg:hover {
+    fill: var(--accent-yellow);
+    transform: scale(1.2);
+}
+
+.card .bottom .bottom-bottom .button {
+    background: #FFFFFF;
+    color: #000000;
+    border: none;
+    border-radius: 24px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card .bottom .bottom-bottom .button:hover {
+    background: var(--accent-yellow);
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 193, 7, 0.5);
+}
+
+.card:hover {
+    border-top-left-radius: 60px;
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .bottom {
+    top: 22%;
+    border-radius: 100px 28px 28px 28px;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+}
+
+.card:hover .profile-pic {
+    width: 130px;
+    height: 130px;
+    aspect-ratio: 1;
+    top: 15px;
+    left: 15px;
+    border-radius: 50%;
+    z-index: 3;
+    border: 4px solid var(--accent-yellow);
+    box-shadow: 0 8px 24px rgba(255, 193, 7, 0.4);
+    transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+}
+
+.card:hover .profile-pic:hover {
+    transform: scale(1.15);
+    border-radius: 20%;
+}
+
+.card:hover .profile-pic img {
+    transform: scale(1);
+    object-position: center center;
+    transition: all 0.5s ease-in-out 0.5s;
+}
+
+.card:hover .profile-pic svg {
+    transform: scale(1);
+    transition: all 0.5s ease-in-out 0.5s;
+}
+
+/* Beliefs */
+.beliefs {
+    background: white;
+}
+
+.beliefs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.belief-card {
+    padding: 32px;
+    border-radius: var(--radius);
+    background: var(--off-white);
+    text-align: center;
+    transition: all var(--transition);
+}
+
+.belief-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.belief-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+    background: var(--accent-yellow);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.belief-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.belief-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.belief-card p {
+    color: var(--muted-gray);
+    line-height: 1.7;
+}
+
+/* Vision & Mission */
+.vision-mission {
+    background: var(--off-white);
+}
+
+.vm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 48px;
+}
+
+.vm-card {
+    background: white;
+    padding: 48px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.vm-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--accent-yellow), #ffd95a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    box-shadow: 0 10px 25px rgba(255, 199, 0, 0.35);
+    margin-bottom: 24px;
+}
+
+.vm-icon svg {
+    width: 48px;
+    height: 48px;
+}
+
+.vm-card h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.vm-card p {
+    color: var(--muted-gray);
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+/* Stats */
+.stats {
+    background: var(--charcoal);
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 48px;
+}
+
+.stat-card {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--accent-yellow);
+    margin-bottom: 12px;
+    font-family: Helvetica;
+}
+
+.stat-label {
+    font-size: 18px;
+    color: var(--muted-gray);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .page-hero h1 {
+        font-size: clamp(32px, 8vw, 48px);
+    }
+    
+    .page-hero p {
+        font-size: 18px;
+    }
+    
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .story-text h2 {
+        font-size: clamp(28px, 6vw, 36px);
+    }
+    
+    .story-text p {
+        font-size: 16px;
+    }
+    
+    .founders-grid {
+        gap: 40px;
+    }
+    
+    .card {
+        width: 340px;
+        height: 380px;
+    }
+    
+    .card .bottom .content {
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    .card .bottom .bottom-bottom {
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    .card:hover .profile-pic {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .beliefs-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .belief-card {
+        padding: 28px 24px;
+    }
+    
+    .vm-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .vm-card {
+        padding: 32px 24px;
+    }
+    
+    .vm-card h2 {
+        font-size: 28px;
+    }
+    
+    .vm-card p {
+        font-size: 16px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+    
+    .stat-number {
+        font-size: 48px;
+    }
+    
+    .stat-label {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero {
+        padding: 90px 0 50px;
+    }
+    
+    .page-hero h1 {
+        font-size: clamp(28px, 8vw, 40px);
+    }
+    
+    .page-hero p {
+        font-size: 16px;
+    }
+    
+    .beliefs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .belief-card {
+        padding: 24px 20px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .stat-number {
+        font-size: 42px;
+    }
+    
+    .vm-card {
+        padding: 28px 20px;
+    }
+    
+    .card {
+        width: 300px;
+        height: 340px;
+    }
+    
+    .card .bottom .content {
+        left: 1.25rem;
+        right: 1.25rem;
+        height: 180px;
+    }
+    
+    .card .bottom .bottom-bottom {
+        left: 1.25rem;
+        right: 1.25rem;
+        bottom: 1rem;
+    }
+    
+    .card .bottom .content .name {
+        font-size: 1.25rem;
+    }
+    
+    .card .bottom .content .about-me {
+        font-size: 0.875rem;
+    }
+    
+    .card .mail svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .card .bottom .bottom-bottom .social-links-container svg {
+        height: 20px;
+    }
+    
+    .card:hover .profile-pic {
+        width: 90px;
+        height: 90px;
+        top: 12px;
+        left: 12px;
+        border: 6px solid var(--accent-yellow);
+    }
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Printolution</title>
+    <script>
+      // Redirect to index.html for SPA routing
+      const path = window.location.pathname;
+      const base = '/Final-Printolution';
+      if (path.startsWith(base)) {
+        sessionStorage.setItem('redirect', path.slice(base.length) || '/');
+        window.location.replace(base + '/');
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

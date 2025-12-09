@@ -1,0 +1,311 @@
+/* Quote Page Styles - Redesigned */
+
+.page-hero {
+    background: linear-gradient(135deg, #1a1a1c 0%, #0e0e10 100%);
+    color: white;
+    text-align: center;
+    padding: 100px 0 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 193, 7, 0.1) 0%, transparent 70%);
+}
+
+.page-hero h1 {
+    margin-bottom: 12px;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero p {
+    font-size: 18px;
+    color: var(--accent-yellow);
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+/* Quote Section */
+.quote-section {
+    background: #f8f8f8;
+    padding: 60px 0 80px;
+}
+
+.quote-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.quote-intro h2 {
+    margin-bottom: 12px;
+    font-size: 32px;
+}
+
+.quote-intro p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.quote-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    padding: 48px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Form Grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 32px;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-title {
+    font-size: 20px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--accent-yellow);
+    color: var(--charcoal);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--charcoal);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e8e8e8;
+    border-radius: 10px;
+    font-family: Helvetica;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
+    background: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #e74c3c;
+}
+
+.error-message {
+    display: none;
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+}
+
+/* Quote Info Box */
+.quote-info-box {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.08) 0%, rgba(255, 193, 7, 0.03) 100%);
+    border-left: 3px solid var(--accent-yellow);
+    padding: 16px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.quote-info-box svg {
+    flex-shrink: 0;
+    stroke: var(--accent-yellow);
+    margin-top: 2px;
+}
+
+.quote-info-box p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Form Submit */
+.form-submit {
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.btn-large {
+    padding: 16px 48px;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-large svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-large:hover svg {
+    transform: translateX(4px);
+}
+
+.form-status {
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: 10px;
+    display: none;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.form-status.success {
+    display: block;
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-status.error {
+    display: block;
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .quote-wrapper {
+        padding: 40px 32px;
+    }
+    
+    .form-grid {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 80px 0 50px;
+    }
+    
+    .page-hero h1 {
+        font-size: clamp(28px, 7vw, 40px);
+    }
+    
+    .quote-section {
+        padding: 40px 0 60px;
+    }
+    
+    .quote-intro {
+        margin-bottom: 32px;
+    }
+    
+    .quote-intro h2 {
+        font-size: 26px;
+    }
+    
+    .quote-wrapper {
+        padding: 32px 24px;
+        border-radius: 12px;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .column-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .btn-large {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero {
+        padding: 70px 0 40px;
+    }
+    
+    .quote-wrapper {
+        padding: 24px 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 18px;
+    }
+    
+    .column-title {
+        font-size: 17px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px;
+    }
+}
