@@ -7,7 +7,7 @@ function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-col footer-brand">
-            <img src="/Final-Printolution/img/Nev.png" alt="Printolution" className="footer-logo-img" />
+            <img src="/Final-Printolution/img/footer.png" alt="Printolution" className="footer-logo-img" />
             <div className="social-icons">
               <a href="#" aria-label="Instagram" className="social-link">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

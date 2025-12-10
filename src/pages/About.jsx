@@ -99,7 +99,7 @@ function About() {
                 </svg>
               </button>
               <div className="profile-pic">
-                <img src="/Final-Printolution/img/rutu.jpg" alt="Rutu Sharma" />
+                <img src="/Final-Printolution/img/rutu.jpg" alt="Rutvi Vekariya" />
               </div>
               <div className="bottom">
                 <div className="content">
@@ -126,7 +126,7 @@ function About() {
                 </svg>
               </button>
               <div className="profile-pic">
-                <img src="/Final-Printolution/img/jatin.jpg" alt="Jatin Sharma" />
+                <img src="/Final-Printolution/img/jatin.jpg" alt="Jatin Kateliya" />
               </div>
               <div className="bottom">
                 <div className="content">
