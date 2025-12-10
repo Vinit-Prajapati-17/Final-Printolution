@@ -3663,3 +3663,237 @@ html {
     height: 200px;
   }
 }
+/* ============================================
+   OUR WORK SECTION - PORTFOLIO STYLE
+   Black background with hover videos like portfolio page
+============================================ */
+
+.our-work-portfolio {
+    background: #000000;
+    color: #FFFFFF;
+    padding: 80px 0 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.our-work-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.our-work-header .section-title {
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+.our-work-header .section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.work-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.work-item-portfolio {
+    position: relative;
+    padding: 50px 0;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    overflow: visible;
+    transition: all 0.3s ease;
+}
+
+.work-item-portfolio:first-child {
+    padding-top: 30px;
+}
+
+/* Hover Image/Video - Portfolio Style */
+.work-hover-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    width: 70vw;
+    height: 65vh;
+    overflow: visible;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 1000;
+}
+
+.work-item-portfolio:hover .work-hover-image {
+    opacity: .35;
+}
+
+.work-hover-image img,
+.work-hover-image video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Work Content */
+.work-content-portfolio {
+    position: relative;
+    z-index: 2;
+}
+
+.work-category {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.work-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.work-number {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.work-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.work-item-portfolio:hover .work-title {
+    color: #FFC107;
+}
+
+/* Divider Line */
+.work-divider {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    max-width: 800px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.work-item-portfolio:last-child .work-divider {
+    display: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .work-hover-image {
+        width: 95vw;
+        height: 95vh;
+    }
+    
+    .work-divider {
+        width: 85%;
+    }
+}
+
+@media (max-width: 768px) {
+    .our-work-portfolio {
+        padding: 60px 0 100px;
+    }
+    
+    .work-item-portfolio {
+        padding: 40px 0;
+    }
+    
+    .work-title {
+        font-size: 1.5rem;
+    }
+    
+    .work-hover-image {
+        width: 90vw;
+        height: 90vh;
+    }
+    
+    .work-divider {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-item-portfolio {
+        padding: 35px 0;
+    }
+    
+    .work-category {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+    }
+    
+    .work-title-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .work-number {
+        font-size: 0.85rem;
+    }
+    
+    .work-title {
+        font-size: 1.3rem;
+    }
+    
+    .work-hover-image {
+        width: 85vw;
+        height: 85vh;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .work-item-portfolio {
+        transition: none !important;
+    }
+    
+    .work-hover-image {
+        transition: none !important;
+    }
+    
+    .work-title {
+        transition: none !important;
+    }
+}
+
+/* Enhanced video visibility for Our Work section */
+.work-hover-image video {
+    background: transparent;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+    min-height: 200px;
+    opacity: 1;
+}
+
+/* Force video visibility on hover */
+.work-item-portfolio:hover .work-hover-image {
+    opacity: 0.5 !important;
+    display: block !important;
+}
+
+.work-item-portfolio:hover .work-hover-image video {
+    opacity: 0.5 !important;
+    display: block !important;
+}

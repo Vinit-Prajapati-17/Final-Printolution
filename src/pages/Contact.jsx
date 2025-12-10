@@ -29,11 +29,51 @@ function Contact() {
 
   return (
     <>
-      {/* Page Hero */}
-      <section className="page-hero">
-        <div className="container">
-          <h1>Get In Touch</h1>
-          <p>We'd love to hear from you. Let's create something amazing together.</p>
+      {/* Hero Section - Marquee Style */}
+      <section className="contact-hero">
+        <div className="hero-marquee">
+          <div className="marquee-track">
+            <span>CONNECT</span>
+            <span className="dot">●</span>
+            <span>DISCUSS</span>
+            <span className="dot">●</span>
+            <span>CREATE</span>
+            <span className="dot">●</span>
+            <span>COLLABORATE</span>
+            <span className="dot">●</span>
+            <span>CONNECT</span>
+            <span className="dot">●</span>
+            <span>DISCUSS</span>
+            <span className="dot">●</span>
+            <span>CREATE</span>
+            <span className="dot">●</span>
+            <span>COLLABORATE</span>
+            <span className="dot">●</span>
+          </div>
+        </div>
+        <div className="hero-center">
+          <h1>GET IN TOUCH</h1>
+          <p>Let's create something amazing together</p>
+        </div>
+        <div className="hero-marquee reverse">
+          <div className="marquee-track">
+            <span>SUPPORT</span>
+            <span className="dot">●</span>
+            <span>SOLUTIONS</span>
+            <span className="dot">●</span>
+            <span>PARTNERSHIP</span>
+            <span className="dot">●</span>
+            <span>RESULTS</span>
+            <span className="dot">●</span>
+            <span>SUPPORT</span>
+            <span className="dot">●</span>
+            <span>SOLUTIONS</span>
+            <span className="dot">●</span>
+            <span>PARTNERSHIP</span>
+            <span className="dot">●</span>
+            <span>RESULTS</span>
+            <span className="dot">●</span>
+          </div>
         </div>
       </section>
 

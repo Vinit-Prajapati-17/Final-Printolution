@@ -88,11 +88,51 @@ function Careers() {
 
   return (
     <>
-      {/* Page Hero */}
-      <section className="page-hero">
-        <div className="container">
-          <h1>Join Our Team</h1>
+      {/* Hero Section - Marquee Style */}
+      <section className="careers-hero">
+        <div className="hero-marquee">
+          <div className="marquee-track">
+            <span>GROW</span>
+            <span className="dot">●</span>
+            <span>LEARN</span>
+            <span className="dot">●</span>
+            <span>INNOVATE</span>
+            <span className="dot">●</span>
+            <span>SUCCEED</span>
+            <span className="dot">●</span>
+            <span>GROW</span>
+            <span className="dot">●</span>
+            <span>LEARN</span>
+            <span className="dot">●</span>
+            <span>INNOVATE</span>
+            <span className="dot">●</span>
+            <span>SUCCEED</span>
+            <span className="dot">●</span>
+          </div>
+        </div>
+        <div className="hero-center">
+          <h1>JOIN OUR TEAM</h1>
           <p>Be part of a creative, innovative, and growing company</p>
+        </div>
+        <div className="hero-marquee reverse">
+          <div className="marquee-track">
+            <span>OPPORTUNITY</span>
+            <span className="dot">●</span>
+            <span>CREATIVITY</span>
+            <span className="dot">●</span>
+            <span>TEAMWORK</span>
+            <span className="dot">●</span>
+            <span>FUTURE</span>
+            <span className="dot">●</span>
+            <span>OPPORTUNITY</span>
+            <span className="dot">●</span>
+            <span>CREATIVITY</span>
+            <span className="dot">●</span>
+            <span>TEAMWORK</span>
+            <span className="dot">●</span>
+            <span>FUTURE</span>
+            <span className="dot">●</span>
+          </div>
         </div>
       </section>
 

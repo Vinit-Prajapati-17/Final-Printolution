@@ -211,7 +211,7 @@ function Home() {
                 <p className="hero-subtext">We turn your ideas into reality through innovative design and premium-quality printing services tailored to your needs.</p>
                 <div className="hero-cta">
                   <Link to="/quote" className="btn btn-primary">Get a Quote</Link>
-                  <a href="#featured-work" className="btn btn-secondary">See Work</a>
+                  <Link to="/portfolio" className="btn btn-secondary">See Work</Link>
                 </div>
               </div>
               <div className="hero-right">
@@ -374,12 +374,85 @@ function Home() {
           {[...Array(6)].map((_, i) => <div key={i} className="bottom-particle"></div>)}
         </div>
 
-        {/* Featured Work */}
-        <section className="featured-work" id="featured-work">
+        {/* Our Work - Portfolio Style */}
+        <section className="our-work-portfolio">
           <div className="container">
-            <h2 className="section-title">Featured Work</h2>
-            <div className="work-grid">
-              {[...Array(6)].map((_, i) => <div key={i} className="work-item"></div>)}
+            <div className="our-work-header">
+              <h2 className="section-title">Our Work</h2>
+              <p className="section-subtitle">Discover our portfolio of creative solutions that have helped brands stand out and succeed.</p>
+            </div>
+            <div className="work-list">
+              <Link
+                to="/portfolio"
+                className="work-item-portfolio"
+              >
+                {/* Hover Video */}
+                <div className="work-hover-image">
+                  <video autoPlay loop muted playsInline>
+                    <source src={`${import.meta.env.BASE_URL}img/portlogo.mp4`} type="video/mp4" />
+                  </video>
+                </div>
+                
+                {/* Content */}
+                <div className="work-content-portfolio">
+                  <span className="work-category">DESIGN</span>
+                  <div className="work-title-row">
+                    <span className="work-number">01.</span>
+                    <h2 className="work-title">Logo Design & Branding</h2>
+                  </div>
+                </div>
+                
+                {/* Divider Line */}
+                <div className="work-divider"></div>
+              </Link>
+
+              <Link
+                to="/portfolio"
+                className="work-item-portfolio"
+              >
+                {/* Hover Video */}
+                <div className="work-hover-image">
+                  <video autoPlay loop muted playsInline>
+                    <source src={`${import.meta.env.BASE_URL}img/portlogo.mp4`} type="video/mp4" />
+                  </video>
+                </div>
+                
+                {/* Content */}
+                <div className="work-content-portfolio">
+                  <span className="work-category">BRANDING</span>
+                  <div className="work-title-row">
+                    <span className="work-number">02.</span>
+                    <h2 className="work-title">Broucher & Catalogue</h2>
+                  </div>
+                </div>
+                
+                {/* Divider Line */}
+                <div className="work-divider"></div>
+              </Link>
+
+              <Link
+                to="/portfolio"
+                className="work-item-portfolio"
+              >
+                {/* Hover Video */}
+                <div className="work-hover-image">
+                  <video autoPlay loop muted playsInline>
+                    <source src={`${import.meta.env.BASE_URL}img/portlogo.mp4`} type="video/mp4" />
+                  </video>
+                </div>
+                
+                {/* Content */}
+                <div className="work-content-portfolio">
+                  <span className="work-category">BRANDING</span>
+                  <div className="work-title-row">
+                    <span className="work-number">03.</span>
+                    <h2 className="work-title">Product label & Packaging</h2>
+                  </div>
+                </div>
+                
+                {/* Divider Line */}
+                <div className="work-divider"></div>
+              </Link>
             </div>
           </div>
         </section>
