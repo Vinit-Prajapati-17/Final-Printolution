@@ -9,7 +9,7 @@ function Portfolio() {
       id: 1,
       number: '01',
       category: 'DESIGN',
-      title: 'Branding, Identity & Strategy',
+      title: 'Logo Design & Branding',
       image: `${import.meta.env.BASE_URL}img/log 1.png`,
       link: '/services'
     },
@@ -17,7 +17,7 @@ function Portfolio() {
       id: 2,
       number: '02',
       category: 'BRANDING',
-      title: 'Print Editorials & Packaging Design',
+      title: 'Broucher & Catalogue',
       image: `${import.meta.env.BASE_URL}img/log 2.png`,
       link: '/services'
     },
@@ -25,7 +25,7 @@ function Portfolio() {
       id: 3,
       number: '03',
       category: 'BRANDING',
-      title: 'Creative Marketing Materials',
+      title: ' Product label & Packaging',
       image: `${import.meta.env.BASE_URL}img/log 3.png`,
       link: '/services'
     },
@@ -33,7 +33,7 @@ function Portfolio() {
       id: 4,
       number: '04',
       category: 'PRINTING',
-      title: 'Corporate & Commercial Printing',
+      title: ' Banner & Hoarding',
       image: `${import.meta.env.BASE_URL}img/log 4.png`,
       link: '/services'
     },
@@ -41,7 +41,7 @@ function Portfolio() {
       id: 5,
       number: '05',
       category: 'DESIGN',
-      title: 'Promotional & Event Materials',
+      title: ' News paper & Invitation',
       image: `${import.meta.env.BASE_URL}img/log 5.png`,
       link: '/services'
     },
@@ -49,7 +49,7 @@ function Portfolio() {
       id: 6,
       number: '06',
       category: 'PACKAGING',
-      title: 'Custom Packaging Solutions',
+      title: ' BUSINESS Profile and MAGAZINE',
       image: `${import.meta.env.BASE_URL}img/box.jpg`,
       link: '/services'
     }
