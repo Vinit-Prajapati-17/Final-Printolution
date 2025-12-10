@@ -592,7 +592,7 @@
 
 /* Stats */
 .stats {
-    background: var(--charcoal);
+    background: #000000;
     color: white;
 }
 
@@ -805,7 +805,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/Final-Printolution/img/allinone.jpg');
+  background-image: url('/Final-Printolution/img/allin.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

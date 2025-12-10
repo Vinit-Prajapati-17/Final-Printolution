@@ -10,19 +10,19 @@ function Services() {
       id: 'design',
       title: 'DESIGN',
       description: 'Get the best design service for all types of websites and marketing requirements. Promote your brand online and offline with us.',
-      image: `${import.meta.env.BASE_URL}img/design.jpg`
+      image: `${import.meta.env.BASE_URL}img/designing.jpg`
     },
     {
       id: 'printing',
       title: 'PRINTING',
       description: 'All types of printing services like brochures, letterhead, profiles, visiting cards, etc. are available. We are pixel-perfect printing services.',
-      image: `${import.meta.env.BASE_URL}img/print.jpg`
+      image: `${import.meta.env.BASE_URL}img/printing.jpg`
     },
     {
       id: 'branding',
       title: 'BRANDING',
       description: 'Build a strong brand identity with our comprehensive branding solutions. From logos to complete brand guidelines.',
-      image: `${import.meta.env.BASE_URL}img/branding.jpg`
+      image: `${import.meta.env.BASE_URL}img/brand.jpg`
     }
   ]
 
@@ -114,7 +114,7 @@ function Services() {
           ))}
           {/* Default image when nothing is hovered */}
           <div className={`banner-bg-image default ${activeBannerService === null ? 'active' : ''}`}>
-            <img src={`${import.meta.env.BASE_URL}img/allinone.jpg`} alt="Our Services" />
+            <img src={`${import.meta.env.BASE_URL}img/allin.jpg`} alt="Our Services" />
           </div>
         </div>
 
