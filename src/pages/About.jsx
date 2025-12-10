@@ -41,11 +41,11 @@ function About() {
                 </svg>
               </button>
               <div className="profile-pic">
-                <img src={`${import.meta.env.BASE_URL}img/rutu.jpg`} alt="Rutu Sharma" />
+                <img src="/Final-Printolution/img/rutu.jpg" alt="Rutu Sharma" />
               </div>
               <div className="bottom">
                 <div className="content">
-                  <span className="name">Rutu Vekariya</span>
+                  <span className="name">Rutvi Satasiya</span>
                   <span className="about-me">Co-Founder & Creative Director. Visionary leader with a passion for design excellence and innovation in print media.</span>
                 </div>
                 <div className="bottom-bottom">
@@ -68,7 +68,7 @@ function About() {
                 </svg>
               </button>
               <div className="profile-pic">
-                <img src={`${import.meta.env.BASE_URL}img/jatin.jpg`} alt="Jatin Sharma" />
+                <img src="/Final-Printolution/img/jatin.jpg" alt="Jatin Sharma" />
               </div>
               <div className="bottom">
                 <div className="content">

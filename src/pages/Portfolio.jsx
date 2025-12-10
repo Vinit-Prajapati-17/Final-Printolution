@@ -29,15 +29,15 @@ function Portfolio() {
   ]
 
   // Client logos for Our Clients section
-  const clientLogos = Array.from({ length: 17 }, (_, i) => `/OUR CLIENT/${i + 1}.png`)
+  const clientLogos = Array.from({ length: 17 }, (_, i) => `/Final-Printolution/OUR CLIENT/${i + 1}.png`)
 
   // Logo brands data with images (using %20 for spaces in URL)
   const logoBrands = [
-    { name: 'Samarthya Greens', image: '/img/log%201.png' },
-    { name: 'Matli Tea', image: '/img/log%202.png' },
-    { name: 'Technocraft', image: '/img/log%203.png' },
-    { name: 'Anishi Jewels', image: '/img/log%204.png' },
-    { name: 'Sattatav Buildcon', image: '/img/log%205.png' }
+    { name: 'Samarthya Greens', image: '/Final-Printolution/img/log%201.png' },
+    { name: 'Matli Tea', image: '/Final-Printolution/img/log%202.png' },
+    { name: 'Technocraft', image: '/Final-Printolution/img/log%203.png' },
+    { name: 'Anishi Jewels', image: '/Final-Printolution/img/log%204.png' },
+    { name: 'Sattatav Buildcon', image: '/Final-Printolution/img/log%205.png' }
   ]
 
   // Horizontal scroll hijacking for logo section
@@ -143,7 +143,7 @@ function Portfolio() {
       {/* Sidebar Navigation */}
       <aside className="portfolio-sidebar">
         <div className="sidebar-logo">
-          <img src={`${import.meta.env.BASE_URL}img/Main logo.png`} alt="Printolution" />
+          <img src="/Final-Printolution/img/Main logo.png" alt="Printolution" />
         </div>
         <nav className="sidebar-nav">
           {sections.map((section) => (
