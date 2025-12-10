@@ -417,9 +417,9 @@ function Home() {
             <h2 className="section-title">Join Us on Social Media</h2>
             <div className="social-gallery">
               {[
+                { img: '/Final-Printolution/img/Lemongrass.jpg', link: 'https://www.instagram.com/p/DRRdRJDjdxy/?igsh=bzI4Mnphb3I5OXNv' },
+                { img: '/Final-Printolution/img/billboard.jpg', link: 'https://www.instagram.com/p/DSC5gRsk7kf/?igsh=dmNiMGNiajIweW44' },
                 { img: '/Final-Printolution/img/box.jpg', link: 'https://www.instagram.com/p/DMhvQu7Tn8H/?igsh=bHRhczk3MHlmY3Rr' },
-                { img: '/Final-Printolution/img/tea.jpg', link: 'https://www.instagram.com/p/DOI6vkBjRuc/?igsh=Z29kNHZsN3JjY2Nv' },
-                { img: '/Final-Printolution/img/logo.jpg', link: 'https://instagram.com/printolution_' },
                 { img: '/Final-Printolution/img/hoarding.jpeg', link: 'https://www.instagram.com/p/DSCtb93jdz2/?igsh=MXF6MDZucHcyYnp6Mg==' },
                 { img: '/Final-Printolution/img/BodyLotion.jpeg', link: 'https://www.instagram.com/p/DRRdbDujfTt/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==' }
               ].map((item, i) => (

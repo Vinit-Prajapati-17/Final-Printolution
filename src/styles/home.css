@@ -809,7 +809,7 @@ section::before {
 }
 
 .mockup-2 {
-    background-image: url('/Final-Printolution/img/tea.jpg');
+    background-image: url('/Final-Printolution/img/lavender.jpg');
     background-color: #000000;
     transform: translateX(0) translateY(0) scale(0.95) rotate(0deg);
     animation-delay: 0.5s;
