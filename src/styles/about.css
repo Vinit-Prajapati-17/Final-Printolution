@@ -787,7 +787,43 @@
     }
 }
 /* Hero Section - Marquee Style for About, Contact, Careers */
-.about-hero,
+.about-hero {
+  background: #f5f5f0;
+  padding: 100px 0 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/Final-Printolution/img/allinone.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.about-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
 .contact-hero,
 .careers-hero {
   background: #f5f5f0;
@@ -807,6 +843,8 @@
   width: 100%;
   overflow: hidden;
   padding: 15px 0;
+  position: relative;
+  z-index: 3;
 }
 
 .about-hero .marquee-track,
@@ -859,10 +897,19 @@
   text-align: center;
   padding: 40px 20px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
-.about-hero .hero-center h1,
+.about-hero .hero-center h1 {
+  font-size: clamp(2.5rem, 10vw, 6rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -3px;
+  line-height: 0.9;
+  margin: 0 0 15px 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
 .contact-hero .hero-center h1,
 .careers-hero .hero-center h1 {
   font-size: clamp(2.5rem, 10vw, 6rem);
@@ -873,7 +920,15 @@
   margin: 0 0 15px 0;
 }
 
-.about-hero .hero-center p,
+.about-hero .hero-center p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
 .contact-hero .hero-center p,
 .careers-hero .hero-center p {
   font-size: clamp(1rem, 2vw, 1.3rem);
