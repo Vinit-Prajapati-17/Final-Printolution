@@ -2,36 +2,54 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function About() {
-  const [activeService, setActiveService] = useState(null)
-
-  const services = [
-    {
-      id: 'design',
-      title: 'DESIGN',
-      description: 'Get the best design service for all types of websites and marketing requirements. Promote your brand online and offline with us.',
-      image: `${import.meta.env.BASE_URL}img/design.jpg`
-    },
-    {
-      id: 'printing',
-      title: 'PRINTING',
-      description: 'All types of printing services like brochures, letterhead, profiles, visiting cards, etc. are available. We are pixel-perfect printing services.',
-      image: `${import.meta.env.BASE_URL}img/print.jpg`
-    },
-    {
-      id: 'branding',
-      title: 'BRANDING',
-      description: 'Build a strong brand identity with our comprehensive branding solutions. From logos to complete brand guidelines.',
-      image: `${import.meta.env.BASE_URL}img/branding.jpg`
-    }
-  ]
 
   return (
     <>
-      {/* Page Hero */}
-      <section className="page-hero">
-        <div className="container">
-          <h1>About Printolution</h1>
+      {/* Hero Section - Marquee Style */}
+      <section className="about-hero">
+        <div className="hero-marquee">
+          <div className="marquee-track">
+            <span>CREATIVE</span>
+            <span className="dot">●</span>
+            <span>INNOVATIVE</span>
+            <span className="dot">●</span>
+            <span>QUALITY</span>
+            <span className="dot">●</span>
+            <span>TRUSTED</span>
+            <span className="dot">●</span>
+            <span>CREATIVE</span>
+            <span className="dot">●</span>
+            <span>INNOVATIVE</span>
+            <span className="dot">●</span>
+            <span>QUALITY</span>
+            <span className="dot">●</span>
+            <span>TRUSTED</span>
+            <span className="dot">●</span>
+          </div>
+        </div>
+        <div className="hero-center">
+          <h1>ABOUT US</h1>
           <p>Transforming ideas into premium print since 2024</p>
+        </div>
+        <div className="hero-marquee reverse">
+          <div className="marquee-track">
+            <span>EXCELLENCE</span>
+            <span className="dot">●</span>
+            <span>PASSION</span>
+            <span className="dot">●</span>
+            <span>DEDICATION</span>
+            <span className="dot">●</span>
+            <span>SUCCESS</span>
+            <span className="dot">●</span>
+            <span>EXCELLENCE</span>
+            <span className="dot">●</span>
+            <span>PASSION</span>
+            <span className="dot">●</span>
+            <span>DEDICATION</span>
+            <span className="dot">●</span>
+            <span>SUCCESS</span>
+            <span className="dot">●</span>
+          </div>
         </div>
       </section>
 
@@ -51,39 +69,7 @@ function About() {
         </div>
       </section>
 
-      {/* Services Banner - Interactive with Hover */}
-      <section className="services-banner">
-        {/* Background Images */}
-        <div className="services-banner-images">
-          {services.map((service) => (
-            <div 
-              key={service.id}
-              className={`banner-bg-image ${activeService === service.id ? 'active' : ''}`}
-            >
-              <img src={service.image} alt={service.title} />
-            </div>
-          ))}
-          {/* Default image when nothing is hovered */}
-          <div className={`banner-bg-image default ${activeService === null ? 'active' : ''}`}>
-            <img src={`${import.meta.env.BASE_URL}img/allinone.jpg`} alt="Our Services" />
-          </div>
-        </div>
 
-        {/* Service Labels */}
-        <div className="services-banner-labels">
-          {services.map((service) => (
-            <div 
-              key={service.id}
-              className={`banner-label ${activeService === service.id ? 'active' : ''}`}
-              onMouseEnter={() => setActiveService(service.id)}
-              onMouseLeave={() => setActiveService(null)}
-            >
-              <h3 className="label-title">{service.title}</h3>
-              <p className="label-description">{service.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Founders */}
       <section className="founders">

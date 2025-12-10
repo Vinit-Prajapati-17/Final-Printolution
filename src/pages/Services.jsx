@@ -3,6 +3,28 @@ import { Link } from 'react-router-dom'
 
 function Services() {
   const [activeService, setActiveService] = useState(null)
+  const [activeBannerService, setActiveBannerService] = useState(null)
+
+  const bannerServices = [
+    {
+      id: 'design',
+      title: 'DESIGN',
+      description: 'Get the best design service for all types of websites and marketing requirements. Promote your brand online and offline with us.',
+      image: `${import.meta.env.BASE_URL}img/design.jpg`
+    },
+    {
+      id: 'printing',
+      title: 'PRINTING',
+      description: 'All types of printing services like brochures, letterhead, profiles, visiting cards, etc. are available. We are pixel-perfect printing services.',
+      image: `${import.meta.env.BASE_URL}img/print.jpg`
+    },
+    {
+      id: 'branding',
+      title: 'BRANDING',
+      description: 'Build a strong brand identity with our comprehensive branding solutions. From logos to complete brand guidelines.',
+      image: `${import.meta.env.BASE_URL}img/branding.jpg`
+    }
+  ]
 
   const services = [
     {
@@ -75,6 +97,40 @@ function Services() {
             <span>SOLUTIONS</span>
             <span className="dot">●</span>
           </div>
+        </div>
+      </section>
+
+      {/* Services Banner - Interactive with Hover */}
+      <section className="services-banner">
+        {/* Background Images */}
+        <div className="services-banner-images">
+          {bannerServices.map((service) => (
+            <div 
+              key={service.id}
+              className={`banner-bg-image ${activeBannerService === service.id ? 'active' : ''}`}
+            >
+              <img src={service.image} alt={service.title} />
+            </div>
+          ))}
+          {/* Default image when nothing is hovered */}
+          <div className={`banner-bg-image default ${activeBannerService === null ? 'active' : ''}`}>
+            <img src={`${import.meta.env.BASE_URL}img/allinone.jpg`} alt="Our Services" />
+          </div>
+        </div>
+
+        {/* Service Labels */}
+        <div className="services-banner-labels">
+          {bannerServices.map((service) => (
+            <div 
+              key={service.id}
+              className={`banner-label ${activeBannerService === service.id ? 'active' : ''}`}
+              onMouseEnter={() => setActiveBannerService(service.id)}
+              onMouseLeave={() => setActiveBannerService(null)}
+            >
+              <h3 className="label-title">{service.title}</h3>
+              <p className="label-description">{service.description}</p>
+            </div>
+          ))}
         </div>
       </section>
 
