@@ -238,11 +238,11 @@ function Home() {
             </div>
             <div className="highlights-horizontal" ref={highlightsRef}>
               <div className="highlight-card">
-                <div className="highlight-number" data-target="45+">0</div>
+                <div className="highlight-number" data-target="45">0</div>
                 <div className="highlight-label">Satisfied Clients</div>
               </div>
               <div className="highlight-card">
-                <div className="highlight-number" data-target="1000+">0</div>
+                <div className="highlight-number" data-target="1000">0</div>
                 <div className="highlight-label">Projects Completed</div>
               </div>
               <div className="highlight-card">
