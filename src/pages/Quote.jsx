@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import emailjs from '@emailjs/browser'
 
 function Quote() {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ function Quote() {
     deadline: '',
     budget: '',
     description: '',
-    file: null,
+    file: '',
     honeypot: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -47,29 +48,73 @@ function Quote() {
   ]
 
   const handleChange = (e) => {
-    const { name, value, type, files } = e.target
-    if (type === 'file') {
-      setFormData({ ...formData, [name]: files[0] })
+    const { name, value } = e.target
+    // keep original behaviour: if serviceType changes, reset projectType
+    if (name === 'serviceType') {
+      setFormData(prev => ({ ...prev, [name]: value, projectType: '' }))
     } else {
       setFormData({ ...formData, [name]: value })
-      if (name === 'serviceType') {
-        setFormData(prev => ({ ...prev, [name]: value, projectType: '' }))
-      }
     }
   }
 
+  // ---------- REPLACED: Only this function updated ----------
   const handleSubmit = async (e) => {
     e.preventDefault()
     
     if (formData.honeypot) return
 
     setIsSubmitting(true)
-    
-    setTimeout(() => {
-      setIsSubmitting(false)
+    setSubmitStatus(null)
+
+    try {
+      // EmailJS configuration — replace publicKey with your actual public key
+      const serviceId = 'service_printolution'
+      const templateId = 'template_quote'
+      const publicKey = 'YOUR_PUBLIC_KEY' // ← replace with your EmailJS public key
+
+      // Use these exact variable names in your EmailJS template:
+      // {{client_name}}, {{client_email}}, {{client_phone}}, {{company_name}},
+      // {{service_type}}, {{project_type}}, {{quantity}}, {{deadline}},
+      // {{budget_range}}, {{project_description}}, {{reference_link}}
+      const templateParams = {
+        client_name: formData.name,
+        client_email: formData.email,
+        client_phone: formData.phone,
+        company_name: formData.company,
+        service_type: formData.serviceType,
+        project_type: formData.projectType,
+        quantity: formData.quantity,
+        deadline: formData.deadline,
+        budget_range: formData.budget,
+        project_description: formData.description,
+        reference_link: formData.file || 'No reference link provided'
+      }
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
+      
       setSubmitStatus('success')
-    }, 1500)
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        serviceType: '',
+        projectType: '',
+        quantity: '',
+        deadline: '',
+        budget: '',
+        description: '',
+        file: '',
+        honeypot: ''
+      })
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
+  // -----------------------------------------------------------
 
   return (
     <>
@@ -132,6 +177,19 @@ function Quote() {
                   <h2>Quote Request Received!</h2>
                   <p>Thank you for your interest in Printolution. Our team will review your requirements and get back to you within 24 hours with a detailed quote.</p>
                   <Link to="/" className="btn btn-primary">Back to Home</Link>
+                </div>
+              ) : submitStatus === 'error' ? (
+                <div className="error-state">
+                  <div className="error-icon">✗</div>
+                  <h2>Submission Failed</h2>
+                  <p>Sorry, there was an error submitting your quote request. Please try again or contact us directly.</p>
+                  <button 
+                    type="button" 
+                    className="btn btn-primary" 
+                    onClick={() => setSubmitStatus(null)}
+                  >
+                    Try Again
+                  </button>
                 </div>
               ) : (
                 <form className="quote-form" onSubmit={handleSubmit}>
@@ -283,25 +341,16 @@ function Quote() {
                       ></textarea>
                     </div>
                     <div className="form-group full-width">
-                      <label htmlFor="file">Attach Reference Files</label>
-                      <div className="file-upload">
-                        <input
-                          type="file"
-                          id="file"
-                          name="file"
-                          onChange={handleChange}
-                          accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.ai,.psd"
-                        />
-                        <div className="file-upload-label">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="17 8 12 3 7 8"/>
-                            <line x1="12" y1="3" x2="12" y2="15"/>
-                          </svg>
-                          <span>{formData.file ? formData.file.name : 'Drop files or click to upload'}</span>
-                          <small>PDF, DOC, JPG, PNG, AI, PSD (Max 10MB)</small>
-                        </div>
-                      </div>
+                      <label htmlFor="file">Reference Work Link</label>
+                      <input
+                        type="url"
+                        id="file"
+                        name="file"
+                        value={formData.file}
+                        onChange={handleChange}
+                        placeholder="https://drive.google.com/... or https://behance.net/..."
+                      />
+                      <small className="form-help">Share a link to your reference work, inspiration, or similar projects (Google Drive, Behance, Dribbble, etc.)</small>
                     </div>
                   </div>
 
@@ -332,7 +381,9 @@ function Quote() {
               <div className="sidebar-card">
                 <div className="card-icon">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                    <rect x="9" y="3" width="6" height="4" rx="1"/>
+                    <path d="M9 12l2 2 4-4"/>
                   </svg>
                 </div>
                 <h3>What Happens Next?</h3>
@@ -369,11 +420,11 @@ function Quote() {
                 </div>
                 <h3>Need Immediate Help?</h3>
                 <p>Call us for urgent requirements or quick consultation</p>
-                <a href="tel:+919724718880" className="phone-link">
+                <a href="+91 97731 54466" className="phone-link">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                   </svg>
-                  +91 97247 18880
+                  +91 97731 54466 
                 </a>
               </div>
             </div>

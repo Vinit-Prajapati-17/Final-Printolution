@@ -72,6 +72,40 @@ This application was submitted through your careers page.
 
 3. Note down the **Template ID** (e.g., `template_careers`)
 
+### Template 3: Quote Request
+1. Create another new template
+2. Use this template content:
+
+**Subject:** New Quote Request from {{client_name}} - {{service_type}}
+
+**Body:**
+```
+You have received a new quote request from your website.
+
+CLIENT DETAILS:
+Name: {{client_name}}
+Email: {{client_email}}
+Phone: {{client_phone}}
+Company: {{company_name}}
+
+PROJECT DETAILS:
+Service Type: {{service_type}}
+Project Type: {{project_type}}
+Quantity: {{quantity}}
+Deadline: {{deadline}}
+Budget Range: {{budget_range}}
+
+PROJECT DESCRIPTION:
+{{project_description}}
+
+REFERENCE WORK LINK: {{reference_link}}
+
+---
+This quote request was submitted through your quote page.
+```
+
+3. Note down the **Template ID** (e.g., `template_quote`)
+
 ## 4. Get Public Key
 1. Go to "Account" → "General"
 2. Copy your **Public Key**
@@ -92,8 +126,10 @@ Replace these values in `src/pages/Contact.jsx`:
 - **Service ID**: service_printolution (update this)
 - **Contact Template ID**: template_contact (update this)
 - **Careers Template ID**: template_careers (update this)
+- **Quote Template ID**: template_quote (update this)
 - **Public Key**: YOUR_PUBLIC_KEY (update this)
 
 ## Files Updated
 - `src/pages/Contact.jsx` - Contact form with EmailJS
 - `src/pages/Careers.jsx` - Career application form with EmailJS
+- `src/pages/Quote.jsx` - Quote request form with EmailJS
