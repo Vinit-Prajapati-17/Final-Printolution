@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -15,16 +16,37 @@ function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (formData.honeypot) return
 
     setIsSubmitting(true)
-    setTimeout(() => {
-      setIsSubmitting(false)
+    setSubmitStatus(null)
+
+    try {
+      // EmailJS configuration
+      const serviceId = 'service_drhzwfc'
+      const templateId = 'template_izqvsts'
+      const publicKey = '9uyifXku8tWA4JV3k'
+
+      // Match EmailJS template fields exactly
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        projectType: formData.projectType,
+        message: formData.message,
+      }
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
+      
       setSubmitStatus('success')
       setFormData({ name: '', email: '', projectType: '', message: '', honeypot: '' })
-    }, 1500)
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -81,6 +103,7 @@ function Contact() {
       <section className="contact-section">
         <div className="container">
           <div className="contact-grid">
+
             {/* Contact Info */}
             <div className="contact-info">
               <h2>Contact Information</h2>
@@ -95,10 +118,10 @@ function Contact() {
                 </div>
                 <div>
                   <h3>Email</h3>
-                  <p>printolutionrjk@gmail.com</p>
+                  <p>info@printolution.com</p>
                 </div>
               </div>
-              
+
               <div className="contact-item">
                 <div className="contact-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -107,10 +130,10 @@ function Contact() {
                 </div>
                 <div>
                   <h3>Phone</h3>
-                  <p>+91 97247 18880</p>
+                  <p>+91 97731 54466 / +91 97232 46181</p>
                 </div>
               </div>
-              
+
               <div className="contact-item">
                 <div className="contact-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -120,10 +143,10 @@ function Contact() {
                 </div>
                 <div>
                   <h3>Address</h3>
-                  <p>Rajkot, Gujarat<br/>India - 360001</p>
+                  <p>Ahmedabad, Gujarat<br/>India - 380001</p>
                 </div>
               </div>
-              
+
               <div className="contact-item">
                 <div className="contact-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -136,11 +159,11 @@ function Contact() {
                   <p>Monday - Saturday: 10:00 AM - 7:00 PM<br/>Sunday: Closed</p>
                 </div>
               </div>
-              
+
               <div className="social-links">
                 <h3>Follow Us</h3>
                 <div className="social-icons-large">
-                  <a href="https://www.instagram.com/printolution_rajkot/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <a href="https://www.instagram.com/printolution_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -162,7 +185,7 @@ function Contact() {
                 </div>
               </div>
             </div>
-            
+
             {/* Contact Form */}
             <div className="contact-form-wrapper">
               <h2>Send Us a Message</h2>
@@ -241,6 +264,12 @@ function Contact() {
                 {submitStatus === 'success' && (
                   <div className="form-status success">
                     ✓ Thank you! Your message has been sent successfully.
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="form-status error">
+                    ✗ Sorry, there was an error sending your message. Please try again.
                   </div>
                 )}
               </form>
