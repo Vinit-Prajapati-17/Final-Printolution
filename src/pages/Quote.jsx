@@ -73,18 +73,50 @@ function Quote() {
 
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section - Marquee Style */}
       <section className="quote-hero">
-        <div className="quote-hero-bg"></div>
-        <div className="container">
-          <div className="quote-hero-content">
-            <span className="page-badge">GET A QUOTE</span>
-            <h1 className="quote-hero-title">
-              Tell Us About Your <span className="highlight">Project</span>
-            </h1>
-            <p className="quote-hero-subtitle">
-              Fill out the form below and we'll get back to you with a detailed quote within 24 hours.
-            </p>
+        <div className="hero-marquee">
+          <div className="marquee-track">
+            <span>QUOTE</span>
+            <span className="dot">●</span>
+            <span>ESTIMATE</span>
+            <span className="dot">●</span>
+            <span>PRICING</span>
+            <span className="dot">●</span>
+            <span>BUDGET</span>
+            <span className="dot">●</span>
+            <span>QUOTE</span>
+            <span className="dot">●</span>
+            <span>ESTIMATE</span>
+            <span className="dot">●</span>
+            <span>PRICING</span>
+            <span className="dot">●</span>
+            <span>BUDGET</span>
+            <span className="dot">●</span>
+          </div>
+        </div>
+        <div className="hero-center">
+          <h1>GET A QUOTE</h1>
+          <p>Tell us about your project and get a detailed quote within 24 hours</p>
+        </div>
+        <div className="hero-marquee reverse">
+          <div className="marquee-track">
+            <span>PROPOSAL</span>
+            <span className="dot">●</span>
+            <span>CONSULTATION</span>
+            <span className="dot">●</span>
+            <span>PLANNING</span>
+            <span className="dot">●</span>
+            <span>SOLUTION</span>
+            <span className="dot">●</span>
+            <span>PROPOSAL</span>
+            <span className="dot">●</span>
+            <span>CONSULTATION</span>
+            <span className="dot">●</span>
+            <span>PLANNING</span>
+            <span className="dot">●</span>
+            <span>SOLUTION</span>
+            <span className="dot">●</span>
           </div>
         </div>
       </section>
@@ -282,38 +314,67 @@ function Quote() {
 
             <div className="quote-sidebar">
               <div className="sidebar-card">
+                <div className="card-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
                 <h3>Why Choose Us?</h3>
                 <ul className="benefits-list">
-                  <li>✓ Fast turnaround times</li>
-                  <li>✓ Competitive pricing</li>
-                  <li>✓ Premium quality materials</li>
-                  <li>✓ Free design consultation</li>
-                  <li>✓ Pan-India delivery</li>
+                  <li><span className="check-icon">✓</span> Fast turnaround times</li>
+                  <li><span className="check-icon">✓</span> Competitive pricing</li>
+                  <li><span className="check-icon">✓</span> Premium quality materials</li>
+                  <li><span className="check-icon">✓</span> Free design consultation</li>
+                  <li><span className="check-icon">✓</span> Pan-India delivery</li>
                 </ul>
               </div>
 
               <div className="sidebar-card">
+                <div className="card-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
+                </div>
                 <h3>What Happens Next?</h3>
                 <div className="steps-list">
                   <div className="step">
                     <span className="step-num">1</span>
-                    <p>We review your requirements</p>
+                    <div className="step-content">
+                      <h4>Review</h4>
+                      <p>We review your requirements</p>
+                    </div>
                   </div>
                   <div className="step">
                     <span className="step-num">2</span>
-                    <p>Our team prepares a quote</p>
+                    <div className="step-content">
+                      <h4>Prepare</h4>
+                      <p>Our team prepares a detailed quote</p>
+                    </div>
                   </div>
                   <div className="step">
                     <span className="step-num">3</span>
-                    <p>We contact you within 24 hours</p>
+                    <div className="step-content">
+                      <h4>Contact</h4>
+                      <p>We contact you within 24 hours</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div className="sidebar-card highlight-card">
+                <div className="card-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
                 <h3>Need Immediate Help?</h3>
-                <p>Call us for urgent requirements</p>
-                <a href="tel:+919724718880" className="phone-link">+91 97247 18880</a>
+                <p>Call us for urgent requirements or quick consultation</p>
+                <a href="tel:+919724718880" className="phone-link">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  +91 97247 18880
+                </a>
               </div>
             </div>
           </div>

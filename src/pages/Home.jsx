@@ -114,8 +114,9 @@ function Home() {
 
   const services = {
     design: {
+      title: "Design Studio",
       icon: (
-        <svg className="service-icon-large" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+        <svg className="service-icon-large" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <circle cx="12" cy="12" r="10"/>
           <path d="M12 16v-4"/>
           <path d="M12 8h.01"/>
@@ -126,8 +127,9 @@ function Home() {
       features: ["Logo & branding design", "Stationery design", "Brochures & catalogs", "Brand identity integration"]
     },
     printing: {
+      title: "Printing Solutions",
       icon: (
-        <svg className="service-icon-large" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+        <svg className="service-icon-large" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <polyline points="6 9 6 2 18 2 18 9"/>
           <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
           <rect x="6" y="14" width="12" height="8"/>
@@ -137,8 +139,9 @@ function Home() {
       features: ["Offset & digital printing", "Corporate & commercial printing", "Wedding cards & invitations", "High-quality materials"]
     },
     promotional: {
+      title: "Promotional Products",
       icon: (
-        <svg className="service-icon-large" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+        <svg className="service-icon-large" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <polyline points="20 12 20 22 4 22 4 12"/>
           <rect x="2" y="7" width="20" height="5"/>
           <line x1="12" y1="22" x2="12" y2="7"/>
@@ -150,8 +153,9 @@ function Home() {
       features: ["Posters, banners & hoardings", "Stickers & labels", "Merchandise printing", "Event materials"]
     },
     packaging: {
+      title: "Custom Packaging",
       icon: (
-        <svg className="service-icon-large" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+        <svg className="service-icon-large" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/>
           <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
           <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
@@ -198,14 +202,14 @@ function Home() {
             <div className="hero-content">
               <div className="hero-left">
                 <h1 className="hero-headline">
-                  <span className="word">Your</span>
-                  <span className="word">One-Stop</span>
-                  <span className="word">Destination</span>
-                  <span className="word">for</span>
-                  <span className="word highlight-yellow">Creative</span>
-                  <span className="word highlight-yellow">Printing</span>
-                  <span className="word highlight-yellow">&</span>
-                  <span className="word highlight-yellow">Designing</span>
+                  <span className="word">Your</span>{' '}
+                  <span className="word">One-Stop</span>{' '}
+                  <span className="word">Destination</span>{' '}
+                  <span className="word">for</span>{' '}
+                  <span className="word highlight-yellow">Creative</span>{' '}
+                  <span className="word highlight-yellow">Printing</span>{' '}
+                  <span className="word highlight-yellow">&</span>{' '}
+                  <span className="word highlight-yellow">Designing</span>{' '}
                   <span className="word">Solutions.</span>
                 </h1>
                 <p className="hero-subtext">We turn your ideas into reality through innovative design and premium-quality printing services tailored to your needs.</p>
@@ -285,7 +289,10 @@ function Home() {
               <div className="services-content">
                 {Object.entries(services).map(([key, service]) => (
                   <div key={key} className={`service-panel ${activeService === key ? 'active' : ''}`}>
-                    <div className="service-icon-box">{service.icon}</div>
+                    <div className="service-header">
+                      <div className="service-icon-box">{service.icon}</div>
+                      <h3 className="service-title">{service.title}</h3>
+                    </div>
                     <p className="service-description">{service.description}</p>
                     <ul className="service-features">
                       {service.features.map((feature, i) => (

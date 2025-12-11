@@ -376,35 +376,18 @@ section {
 
 /* Footer */
 .footer {
-    background: #0a0a0c;
+    background: #000000;
     color: var(--off-white);
-    padding: 80px 0 0;
+    padding: 80px 0 40px;
     position: relative;
-    overflow: hidden;
 }
 
 .footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(255, 193, 7, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 193, 7, 0.03) 0%, transparent 50%);
-    pointer-events: none;
+    display: none;
 }
 
 .footer-wave {
-    position: absolute;
-    top: -2px;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 C300,60 600,0 900,30 C1050,45 1125,60 1200,45 L1200,60 L0,60 Z' fill='%230a0a0c'/%3E%3C/svg%3E");
-    background-size: cover;
-    z-index: 1;
+    display: none;
 }
 
 .footer-content {
