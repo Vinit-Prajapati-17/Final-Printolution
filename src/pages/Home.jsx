@@ -312,10 +312,21 @@ function Home() {
         </section>
 
         {/* Scroll spacer */}
+        {/* Scroll spacer */}
         <div className="sticky-scroll-spacer" style={{ height: '100vh', pointerEvents: 'none' }}></div>
 
         {/* Why Choose Us - Scrolls over Services */}
         <section className="why-choose scroll-over-section">
+          {/* Gradient fade - positioned above this section */}
+          <div style={{
+            position: 'absolute',
+            top: '-200px',
+            left: 0,
+            right: 0,
+            height: '200px',
+            background: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.7) 75%, #000000 100%)',
+            pointerEvents: 'none'
+          }}></div>
           <div className="container">
             <div className="why-choose-content">
               <div className="why-choose-left">

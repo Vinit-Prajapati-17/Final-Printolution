@@ -3995,3 +3995,108 @@ html {
 .process.scroll-over-section::before {
     display: none;
 }
+
+
+/* ============================================
+   CRITICAL: Override overflow to fix sticky
+   ============================================ */
+
+/* Remove overflow:hidden from all potential ancestors */
+.top-section-wrapper,
+.dark-section-wrapper,
+.bottom-section-wrapper {
+    overflow: visible !important;
+}
+
+html, body, main, #root {
+    overflow-x: clip !important;
+}
+
+/* Ensure sticky container works */
+.sticky-scroll-container {
+    position: relative !important;
+    overflow: visible !important;
+    z-index: 5;
+}
+
+/* Force sticky positioning */
+.services.services-sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1 !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    background: #FFFFFF !important;
+    padding-top: 100px !important;
+    box-sizing: border-box !important;
+}
+
+/* Scroll-over sections */
+.scroll-over-section {
+    position: relative !important;
+    z-index: 10 !important;
+    background: #000000 !important;
+}
+
+.why-choose.scroll-over-section {
+    padding-top: 200px !important;
+    color: #FFFFFF !important;
+}
+
+.process.scroll-over-section {
+    color: #FFFFFF !important;
+}
+
+
+/* ============================================
+   GRADIENT FADE TRANSITION
+   ============================================ */
+
+/* Fade gradient at top of Why Choose Us section */
+.why-choose.scroll-over-section::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.1) 20%,
+        rgba(0, 0, 0, 0.3) 40%,
+        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0.85) 80%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    pointer-events: none;
+    z-index: 50;
+}
+
+
+/* Gradient fade overlay div */
+.gradient-fade-overlay {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(180deg, 
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 20%,
+        rgba(0, 0, 0, 0.3) 40%,
+        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0.85) 80%,
+        #000000 100%
+    );
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Ensure why-choose section allows overflow for gradient */
+.why-choose.scroll-over-section {
+    overflow: visible !important;
+    position: relative !important;
+}

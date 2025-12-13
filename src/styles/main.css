@@ -950,3 +950,9 @@ section {
         border-radius: 0;
     }
 }
+
+
+/* CRITICAL: Ensure sticky positioning works */
+main {
+    overflow: visible !important;
+}
