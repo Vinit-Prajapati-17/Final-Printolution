@@ -3926,3 +3926,72 @@ html {
     opacity: 0.5 !important;
     display: block !important;
 }
+
+/* ===
+=========================================
+   STICKY SCROLL EFFECT - Services Section
+   ============================================ */
+
+/* Container that holds both sticky and scroll-over sections */
+.sticky-scroll-container {
+    position: relative;
+    overflow: visible !important;
+}
+
+/* Services section - stays sticky while others scroll over */
+.services.services-sticky {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1 !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    background: #FFFFFF !important;
+    padding-top: 100px !important;
+    padding-bottom: 20px !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+}
+
+/* Sections that scroll over the sticky services */
+.scroll-over-section {
+    position: relative;
+    z-index: 10;
+    background: #000000;
+}
+
+/* Why Choose Us scroll-over styling */
+.why-choose.scroll-over-section {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+    padding-top: 250px;
+    margin-top: 80vh;
+}
+
+/* Fade effect at top of Why Choose Us */
+.why-choose.scroll-over-section::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        rgba(0, 0, 0, 0.3) 30%,
+        rgba(0, 0, 0, 0.7) 60%,
+        #000000 100%
+    );
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Process scroll-over styling */
+.process.scroll-over-section {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.process.scroll-over-section::before {
+    display: none;
+}

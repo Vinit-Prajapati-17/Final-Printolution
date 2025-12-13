@@ -261,8 +261,12 @@ function Home() {
           </div>
         </section>
 
-        {/* Services */}
-        <section className="services" id="services">
+      </div>
+
+      {/* STICKY SCROLL CONTAINER */}
+      <div className="sticky-scroll-container">
+        {/* Services - STICKY */}
+        <section className="services services-sticky" id="services">
           <div className="container">
             <div className="services-wrapper">
               <div className="services-sidebar">
@@ -306,17 +310,12 @@ function Home() {
             </div>
           </div>
         </section>
-      </div>
 
-      {/* Dark Section Wrapper */}
-      <div className={`dark-section-wrapper ${darkSectionActive ? 'theme-active' : ''}`} ref={darkSectionRef}>
-        <div className="section-transition-overlay"></div>
-        <div className="dark-floating-particles">
-          {[...Array(6)].map((_, i) => <div key={i} className="dark-particle"></div>)}
-        </div>
+        {/* Scroll spacer */}
+        <div className="sticky-scroll-spacer" style={{ height: '100vh', pointerEvents: 'none' }}></div>
 
-        {/* Why Choose Us */}
-        <section className="why-choose">
+        {/* Why Choose Us - Scrolls over Services */}
+        <section className="why-choose scroll-over-section">
           <div className="container">
             <div className="why-choose-content">
               <div className="why-choose-left">
@@ -339,7 +338,7 @@ function Home() {
         </section>
 
         {/* Process */}
-        <section className="process">
+        <section className="process scroll-over-section">
           <div className="container">
             <div className="process-header">
               <h2 className="section-title">Our Process</h2>
@@ -373,6 +372,7 @@ function Home() {
           </div>
         </section>
       </div>
+      {/* END STICKY SCROLL CONTAINER */}
 
       {/* Bottom Section Wrapper */}
       <div className={`bottom-section-wrapper ${bottomSectionActive ? 'theme-active' : ''}`} ref={bottomSectionRef}>
