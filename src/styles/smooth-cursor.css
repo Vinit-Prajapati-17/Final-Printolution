@@ -1,0 +1,91 @@
+/* Custom Cursor - Yellow dot with circle outline */
+.cursor-ring {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #e91e8c;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  background: transparent;
+  box-shadow: 0 0 10px rgba(255, 235, 59, 0.3);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #ffc107;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  box-shadow: 0 0 8px rgba(255, 235, 59, 0.6);
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Hover effects */
+.cursor-ring.cursor-hover {
+  border-color: #ffc107;
+  box-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hide default cursor on desktop */
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
+  
+  /* Override for specific elements that need cursor */
+  input, textarea, select {
+    cursor: text !important;
+  }
+}
+
+/* Show default cursor on mobile/tablet */
+@media (max-width: 767px) {
+  .cursor-ring,
+  .cursor-dot {
+    display: none;
+  }
+}
+
+/* Animations */
+@keyframes ringRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+}
+
+/* Smooth transitions for cursor movement */
+.smooth-cursor {
+  transition: transform 0.6s ease-out;
+}
+
+/* Special cursor for text selection areas */
+body *::selection {
+  background: rgba(255, 235, 59, 0.3);
+}
+
+body *::-moz-selection {
+  background: rgba(255, 235, 59, 0.3);
+}

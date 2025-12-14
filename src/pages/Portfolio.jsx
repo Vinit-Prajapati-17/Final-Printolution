@@ -11,7 +11,7 @@ function Portfolio() {
       category: 'DESIGN',
       title: 'Logo Design & Branding',
       image: `${import.meta.env.BASE_URL}img/log 1.png`,
-      link: '/services'
+      link: '/portfolio/logo-design-branding'
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ function Portfolio() {
       category: 'BRANDING',
       title: 'Broucher & Catalogue',
       image: `${import.meta.env.BASE_URL}img/log 2.png`,
-      link: '/services'
+      link: '/portfolio/broucher-catalogue'
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ function Portfolio() {
       category: 'BRANDING',
       title: ' Product label & Packaging',
       image: `${import.meta.env.BASE_URL}img/log 3.png`,
-      link: '/services'
+      link: '/portfolio/product-label-packaging'
     },
     {
       id: 4,
@@ -35,7 +35,7 @@ function Portfolio() {
       category: 'PRINTING',
       title: ' Banner & Hoarding',
       image: `${import.meta.env.BASE_URL}img/log 4.png`,
-      link: '/services'
+      link: '/portfolio/banner-hoarding'
     },
     {
       id: 5,
@@ -43,7 +43,7 @@ function Portfolio() {
       category: 'DESIGN',
       title: ' News paper & Invitation',
       image: `${import.meta.env.BASE_URL}img/log 5.png`,
-      link: '/services'
+      link: '/portfolio/newspaper-invitation'
     },
     {
       id: 6,
@@ -51,7 +51,7 @@ function Portfolio() {
       category: 'PACKAGING',
       title: ' BUSINESS Profile and MAGAZINE',
       image: `${import.meta.env.BASE_URL}img/box.jpg`,
-      link: '/services'
+      link: '/portfolio/business-profile-magazine'
     }
   ]
 
