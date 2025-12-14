@@ -67,26 +67,22 @@ function Quote() {
     setSubmitStatus(null)
 
     try {
-      // EmailJS configuration — replace publicKey with your actual public key
-      const serviceId = 'service_printolution'
-      const templateId = 'template_quote'
-      const publicKey = 'YOUR_PUBLIC_KEY' // ← replace with your EmailJS public key
+      // EmailJS configuration
+      const serviceId = 'service_xwfiamf'
+      const templateId = 'template_m30xj0l'
+      const publicKey = '9uyifXku8tWA4JV3k'
 
-      // Use these exact variable names in your EmailJS template:
-      // {{client_name}}, {{client_email}}, {{client_phone}}, {{company_name}},
-      // {{service_type}}, {{project_type}}, {{quantity}}, {{deadline}},
-      // {{budget_range}}, {{project_description}}, {{reference_link}}
       const templateParams = {
-        client_name: formData.name,
-        client_email: formData.email,
-        client_phone: formData.phone,
-        company_name: formData.company,
+        full_name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
         service_type: formData.serviceType,
         project_type: formData.projectType,
         quantity: formData.quantity,
         deadline: formData.deadline,
-        budget_range: formData.budget,
-        project_description: formData.description,
+        budget: formData.budget,
+        description: formData.description,
         reference_link: formData.file || 'No reference link provided'
       }
 

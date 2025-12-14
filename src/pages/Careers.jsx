@@ -1,19 +1,8 @@
 import { useState } from 'react'
-import emailjs from '@emailjs/browser'
 
 function Careers() {
   const [activeModal, setActiveModal] = useState(null)
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    portfolio: '',
-    resume: '',
-    coverLetter: '',
-    honeypot: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null)
+  const [result, setResult] = useState('')
 
   const positions = [
     {
@@ -46,66 +35,32 @@ function Careers() {
     }
   ]
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData({ ...formData, [name]: value })
-  }
+  const onSubmit = async (event) => {
+    event.preventDefault()
+    setResult('Sending....')
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    if (formData.honeypot) return
+    const formData = new FormData(event.target)
+    formData.append('access_key', '19496093-f7eb-4a18-979b-984730899be2')
+    formData.append('subject', `Job Application - ${activeModal?.title || 'General'}`)
 
-    setIsSubmitting(true)
-    setSubmitStatus(null)
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
 
-    try {
-      const serviceId = 'service_wjeqnyi'
-      const templateId = 'template_qxe58y7'
-      const publicKey = '9uyifXku8tWA4JV3k'
+    const data = await response.json()
 
-      const templateParams = {
-        applicant_name: formData.name,
-        applicant_email: formData.email,
-        applicant_phone: formData.phone,
-        portfolio_url: formData.portfolio,
-        resume_url: formData.resume,
-        cover_letter: formData.coverLetter,
-        position_title: activeModal?.title || 'General Application',
-        position_location: activeModal?.location || 'Ahmedabad, Gujarat'
-      }
-
-      await emailjs.send(serviceId, templateId, templateParams, publicKey)
-
-      setSubmitStatus('success')
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        portfolio: '',
-        resume: '',
-        coverLetter: '',
-        honeypot: ''
-      })
-    } catch (error) {
-      console.error('EmailJS Error:', error)
-      setSubmitStatus('error')
-    } finally {
-      setIsSubmitting(false)
+    if (data.success) {
+      setResult('success')
+      event.target.reset()
+    } else {
+      setResult('error')
     }
   }
 
   const openModal = (position) => {
     setActiveModal(position)
-    setSubmitStatus(null)
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      portfolio: '',
-      resume: '',
-      coverLetter: '',
-      honeypot: ''
-    })
+    setResult('')
   }
 
   const closeModal = () => {
@@ -244,22 +199,6 @@ function Careers() {
         </div>
       </section>
 
-      {/* No Openings CTA */}
-      <section className="no-openings">
-        <div className="container">
-          <div className="no-openings-content">
-            <h2>Don't see a role that fits?</h2>
-            <p>
-              We're always looking for talented individuals. Send us your resume
-              and we'll keep you in mind for future opportunities.
-            </p>
-            <a href="mailto:printolutionrjk@gmail.com" className="btn btn-primary">
-              Send Your Resume
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Application Modal */}
       {activeModal && (
         <div
@@ -277,110 +216,91 @@ function Careers() {
               Apply for <span>{activeModal.title}</span>
             </h2>
 
-            {submitStatus === 'success' ? (
+            {result === 'success' ? (
               <div className="form-status success">
-                ✓ Thank you for your application! We'll review it and get back to
-                you soon.
-              </div>
-            ) : submitStatus === 'error' ? (
-              <div className="form-status error">
-                ✗ Sorry, there was an error submitting your application. Please try
-                again.
+                ✓ Thank you for your application! We'll review it and get back to you soon.
               </div>
             ) : (
-              <form className="application-form" onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="applicantName">Full Name *</label>
-                  <input
-                    type="text"
-                    id="applicantName"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
+              <form className="application-form" onSubmit={onSubmit}>
+                <input type="hidden" name="position" value={activeModal.title} />
+                
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="applicantName">Full Name *</label>
+                    <input
+                      type="text"
+                      id="applicantName"
+                      name="name"
+                      required
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="applicantEmail">Email Address *</label>
+                    <input
+                      type="email"
+                      id="applicantEmail"
+                      name="email"
+                      required
+                    />
+                  </div>
                 </div>
 
-                <div className="form-group">
-                  <label htmlFor="applicantEmail">Email Address *</label>
-                  <input
-                    type="email"
-                    id="applicantEmail"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="applicantPhone">Phone Number *</label>
+                    <input
+                      type="tel"
+                      id="applicantPhone"
+                      name="phone"
+                      required
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="portfolio">Portfolio/LinkedIn URL</label>
+                    <input
+                      type="url"
+                      id="portfolio"
+                      name="portfolio"
+                      placeholder="https://"
+                    />
+                  </div>
                 </div>
 
-                <div className="form-group">
-                  <label htmlFor="applicantPhone">Phone Number *</label>
-                  <input
-                    type="tel"
-                    id="applicantPhone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="portfolio">Portfolio/LinkedIn URL</label>
-                  <input
-                    type="url"
-                    id="portfolio"
-                    name="portfolio"
-                    value={formData.portfolio}
-                    onChange={handleChange}
-                    placeholder="https://"
-                  />
-                </div>
-
-                <div className="form-group">
+                <div className="form-group full-width">
                   <label htmlFor="resume">Resume/CV URL *</label>
                   <input
                     type="url"
                     id="resume"
                     name="resume"
-                    value={formData.resume}
-                    onChange={handleChange}
                     placeholder="https://drive.google.com/..."
                     required
                   />
                   <small className="form-help">
-                    Please provide a link to your resume (Google Drive, Dropbox,
-                    etc.)
+                    Please provide a link to your resume (Google Drive, Dropbox, etc.)
                   </small>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group full-width">
                   <label htmlFor="coverLetter">Cover Letter</label>
                   <textarea
                     id="coverLetter"
                     name="coverLetter"
-                    rows="4"
-                    value={formData.coverLetter}
-                    onChange={handleChange}
+                    rows="3"
                     placeholder="Tell us why you'd be a great fit..."
                   ></textarea>
                 </div>
 
-                {/* Honeypot */}
-                <input
-                  type="text"
-                  name="honeypot"
-                  className="honeypot"
-                  tabIndex="-1"
-                  autoComplete="off"
-                  value={formData.honeypot}
-                  onChange={handleChange}
-                  style={{ position: 'absolute', left: '-9999px' }}
-                />
-
-                <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-                  {isSubmitting ? 'Submitting...' : 'Submit Application'}
+                <button type="submit" className="btn btn-primary" disabled={result === 'Sending....'}>
+                  {result === 'Sending....' ? 'Submitting...' : 'Submit Application'}
                 </button>
+                
+                {result === 'error' && (
+                  <div className="form-status error">
+                    ✗ Something went wrong. Please try again.
+                  </div>
+                )}
               </form>
             )}
           </div>
