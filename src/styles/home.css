@@ -2703,7 +2703,47 @@ section::before {
     }
     
     .services {
-        padding: 70px 0;
+        padding: 120px 0 140px 0; /* Increased padding for more scroll area */
+        min-height: 180vh; /* Make section taller than viewport */
+    }
+    
+    /* Allow scrolling through services section, then stick on mobile */
+    .services.services-sticky {
+        position: sticky !important;
+        top: 0 !important;
+        height: 100vh !important;
+        display: flex !important;
+        align-items: center !important;
+        padding-top: 50px !important;
+        padding-bottom: 150px !important;
+        margin-top: 0 !important;
+        background: #FFFFFF !important; /* White background for mobile */
+    }
+    
+    .sticky-scroll-container {
+        position: static !important;
+    }
+    
+    .scroll-over-section {
+        position: static !important;
+        z-index: auto !important;
+        margin-top: 0 !important;
+        background: #FFFFFF !important;
+    }
+    
+    /* Keep bottom section white on mobile */
+    .bottom-section-wrapper,
+    .bottom-section-wrapper.theme-active {
+        background: #FFFFFF !important;
+        color: #000000 !important;
+    }
+    
+    /* Fix service panel styling on mobile - white background with dark text */
+    .service-panel {
+        background: #FFFFFF !important;
+        border: 1px solid #F0F0F0 !important;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06) !important;
+        color: #333333 !important;
     }
     
     .services-wrapper {
@@ -2899,7 +2939,7 @@ section::before {
     }
     
     .highlights-horizontal {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
     
@@ -2914,6 +2954,20 @@ section::before {
     
     .why-choose {
         padding: 70px 0;
+        background: #FFFFFF !important;
+        color: #000000 !important;
+    }
+    
+    .why-choose * {
+        color: #000000 !important;
+    }
+    
+    .why-circle {
+        border-color: #000000 !important;
+    }
+    
+    .why-checkmark {
+        color: #E91E8C !important;
     }
     
     .why-circle {
@@ -2923,6 +2977,7 @@ section::before {
     
     .why-circle h2 {
         font-size: 32px;
+        color: #FFFFFF !important;
     }
     
     .why-reason::before {
@@ -2943,6 +2998,12 @@ section::before {
     
     .process {
         padding: 70px 0;
+        background: #FFFFFF !important;
+    }
+    
+    .process .section-title,
+    .process .section-subtitle {
+        color: #000000 !important;
     }
     
     .process-header {
@@ -3072,7 +3133,7 @@ section::before {
     }
     
     .process-flow {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 24px;
     }
     
@@ -3687,9 +3748,28 @@ html {
 }
 
 @media (max-width: 480px) {
+  .social-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-items: center;
+  }
+
   .social-gallery-item {
     width: 100%;
-    height: 200px;
+    height: 150px;
+  }
+
+  .social-gallery-item:nth-child(5) {
+    grid-column: 1 / -1;
+    width: 60%;
+    height: 150px;
+    justify-self: center;
+  }
+
+  .instagram-icon {
+    width: 28px;
+    height: 28px;
   }
 }
 /* ============================================

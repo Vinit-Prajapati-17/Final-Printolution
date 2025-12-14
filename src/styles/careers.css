@@ -429,6 +429,35 @@
         font-size: 16px;
     }
     
+    .why-work-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .why-work-card {
+        padding: 16px 12px;
+    }
+    
+    .why-work-icon {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+    
+    .why-work-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .why-work-card h3 {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+    
+    .why-work-card p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+    
     .position-card {
         padding: 24px 20px;
     }

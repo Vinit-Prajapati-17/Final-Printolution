@@ -339,10 +339,26 @@
   }
   
   .features-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .feature-card {
+    padding: 20px 12px;
   }
   
   .feature-number {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .feature-card h3 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .feature-card p {
+    font-size: 0.75rem;
+    line-height: 1.4;
   }
 }

@@ -724,20 +724,46 @@
     }
     
     .beliefs-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
     
     .belief-card {
-        padding: 24px 20px;
+        padding: 16px 12px;
+    }
+    
+    .belief-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+    
+    .belief-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .belief-card h3 {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+    
+    .belief-card p {
+        font-size: 11px;
+        line-height: 1.4;
     }
     
     .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
     
     .stat-number {
-        font-size: 42px;
+        font-size: 32px;
+    }
+    
+    .stat-label {
+        font-size: 13px;
     }
     
     .vm-card {
@@ -749,10 +775,15 @@
         height: 340px;
     }
     
+    .card .bottom {
+        top: 70%;
+    }
+    
     .card .bottom .content {
         left: 1.25rem;
         right: 1.25rem;
-        height: 180px;
+        height: auto;
+        bottom: 90px;
     }
     
     .card .bottom .bottom-bottom {
@@ -762,11 +793,18 @@
     }
     
     .card .bottom .content .name {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
     }
     
     .card .bottom .content .about-me {
-        font-size: 0.875rem;
+        font-size: 0.75rem;
+        line-height: 2;
+        margin-top: 2rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     
     .card .mail svg {
