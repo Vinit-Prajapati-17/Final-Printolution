@@ -519,7 +519,11 @@
 /* Action Buttons */
 .action-buttons {
   margin-top: 2rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .btn-primary {
@@ -531,8 +535,9 @@
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  margin-right: 1rem;
   box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+  min-width: 160px;
+  text-align: center;
 }
 
 .btn-primary:hover {
@@ -552,6 +557,8 @@
   text-decoration: none;
   transition: all 0.3s ease;
   background: #FFFFFF;
+  min-width: 160px;
+  text-align: center;
 }
 
 .btn-secondary:hover {

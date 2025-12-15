@@ -823,3 +823,571 @@
         font-size: 40px;
     }
 }
+
+
+/* ============================================
+   ULTRA MODERN LEGAL PAGES STYLES
+   ============================================ */
+
+/* Main Container */
+.legal-page-ultra {
+  background: #000000;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FFC107, #FFD54F, #FFC107);
+  transform-origin: 0%;
+  z-index: 9999;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.8);
+}
+
+/* Floating Particles */
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+/* Cyber Grid Background */
+.cyber-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 193, 7, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 193, 7, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hero Section Ultra */
+.legal-hero-ultra {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 20px 80px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.legal-hero-ultra .container {
+  position: relative;
+  z-index: 3;
+}
+
+/* Hero Orbs */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.hero-orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.3) 0%, transparent 70%);
+  top: -200px;
+  right: -200px;
+}
+
+.hero-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.2) 0%, transparent 70%);
+  bottom: -150px;
+  left: -150px;
+}
+
+/* Page Badge Ultra */
+.page-badge-ultra {
+  display: inline-block;
+  padding: 12px 32px;
+  background: rgba(255, 193, 7, 0.1);
+  border: 2px solid rgba(255, 193, 7, 0.3);
+  border-radius: 50px;
+  color: #FFC107;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.4), transparent);
+  animation: badgeShine 3s infinite;
+}
+
+@keyframes badgeShine {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+/* Title Ultra */
+.legal-title-ultra {
+  font-size: clamp(48px, 10vw, 100px);
+  font-weight: 900;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+
+/* Updated Date Ultra */
+.legal-updated-ultra {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.update-icon {
+  width: 20px;
+  height: 20px;
+  color: #FFC107;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+.scroll-arrow {
+  font-size: 24px;
+  color: #FFC107;
+}
+
+/* Intro Section Ultra */
+.legal-intro-ultra {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px 80px;
+}
+
+.intro-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 193, 7, 0.2);
+  border-radius: 24px;
+  padding: 48px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.intro-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.intro-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.intro-card p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Content Section Ultra */
+.legal-content-ultra {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px 100px;
+}
+
+.legal-content-ultra .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sections Grid */
+.sections-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* 3D Section Card */
+.legal-section-3d {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 193, 7, 0.15);
+  border-radius: 24px;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+.legal-section-3d:hover {
+  border-color: rgba(255, 193, 7, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.section-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #FFC107, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.legal-section-3d:hover .section-glow {
+  opacity: 1;
+}
+
+.section-number-3d {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 72px;
+  font-weight: 900;
+  color: rgba(255, 193, 7, 0.08);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.legal-section-3d h2 {
+  color: #FFFFFF;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.section-content-3d {
+  position: relative;
+  z-index: 1;
+}
+
+.section-content-3d h3 {
+  color: #FFC107;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 24px 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subtitle-icon {
+  font-size: 12px;
+  color: #FFC107;
+}
+
+.section-content-3d p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0 0 16px 0;
+}
+
+/* Animated List */
+.animated-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.animated-list li {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  line-height: 1.8;
+  padding: 12px 0 12px 32px;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: default;
+}
+
+.animated-list li:last-child {
+  border-bottom: none;
+}
+
+.list-bullet {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #FFC107;
+  border-radius: 50%;
+}
+
+.list-bullet::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 193, 7, 0.2);
+  border-radius: 50%;
+}
+
+/* Contact Card 3D */
+.contact-card-3d {
+  background: rgba(255, 193, 7, 0.05);
+  border: 1px solid rgba(255, 193, 7, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.contact-card-3d p {
+  margin: 8px 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-card-3d strong {
+  color: #FFC107;
+  font-size: 20px;
+}
+
+.contact-card-3d a {
+  color: #FFC107;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-card-3d a:hover {
+  text-decoration: underline;
+}
+
+/* Card Shine Effect */
+.card-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.legal-section-3d:hover .card-shine {
+  left: 150%;
+}
+
+/* Navigation Links Ultra */
+.legal-nav-ultra {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 80px;
+  flex-wrap: wrap;
+}
+
+.nav-link-ultra {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 32px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 193, 7, 0.2);
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link-ultra:hover {
+  background: rgba(255, 193, 7, 0.1);
+  border-color: rgba(255, 193, 7, 0.5);
+  transform: translateY(-4px);
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
+  color: #FFC107;
+}
+
+.nav-text {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.nav-arrow {
+  color: #FFC107;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.nav-link-ultra:hover .nav-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive Styles for Ultra */
+@media (max-width: 768px) {
+  .legal-hero-ultra {
+    min-height: auto;
+    padding: 140px 20px 60px;
+  }
+  
+  .legal-title-ultra {
+    font-size: clamp(36px, 8vw, 60px);
+  }
+  
+  .page-badge-ultra {
+    padding: 10px 24px;
+    font-size: 12px;
+  }
+  
+  .intro-card {
+    padding: 32px 24px;
+  }
+  
+  .intro-card p {
+    font-size: 16px;
+  }
+  
+  .legal-section-3d {
+    padding: 32px 24px;
+  }
+  
+  .section-number-3d {
+    font-size: 48px;
+    top: 16px;
+    right: 20px;
+  }
+  
+  .legal-section-3d h2 {
+    font-size: 22px;
+  }
+  
+  .legal-nav-ultra {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .nav-link-ultra {
+    justify-content: center;
+  }
+  
+  .hero-orb-1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: -100px;
+  }
+  
+  .hero-orb-2 {
+    width: 250px;
+    height: 250px;
+    bottom: -75px;
+    left: -75px;
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-hero-ultra {
+    padding: 120px 16px 50px;
+  }
+  
+  .legal-title-ultra {
+    font-size: clamp(28px, 10vw, 48px);
+    letter-spacing: -1px;
+  }
+  
+  .page-badge-ultra {
+    padding: 8px 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  
+  .intro-card {
+    padding: 24px 20px;
+  }
+  
+  .legal-section-3d {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+  
+  .section-number-3d {
+    font-size: 36px;
+  }
+  
+  .legal-section-3d h2 {
+    font-size: 20px;
+  }
+  
+  .section-content-3d p,
+  .animated-list li {
+    font-size: 15px;
+  }
+  
+  .contact-card-3d {
+    padding: 24px 20px;
+  }
+}
