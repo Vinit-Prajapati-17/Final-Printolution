@@ -238,7 +238,7 @@ function Home() {
         <section className="highlights-banner-section">
           <div className="container">
             <div className="banner-top">
-              <img src="/Final-Printolution/img/Web Banner.gif" alt="Printolution Services Banner" className="banner-img" />
+              <img src="/img/Web Banner.gif" alt="Printolution Services Banner" className="banner-img" />
             </div>
             <div className="highlights-horizontal" ref={highlightsRef}>
               <div className="highlight-card">
@@ -407,7 +407,7 @@ function Home() {
                 {/* Hover Video */}
                 <div className="work-hover-image">
                   <video autoPlay loop muted playsInline>
-                    <source src={`${import.meta.env.BASE_URL}img/portlogo.mp4`} type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}img/Logo Design & Branding.mp4`} type="video/mp4" />
                   </video>
                 </div>
                 
@@ -431,7 +431,7 @@ function Home() {
                 {/* Hover Video */}
                 <div className="work-hover-image">
                   <video autoPlay loop muted playsInline>
-                    <source src={`${import.meta.env.BASE_URL}img/portlogo.mp4`} type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}img/Broucher & Catalogue.mp4`} type="video/mp4" />
                   </video>
                 </div>
                 
@@ -455,7 +455,7 @@ function Home() {
                 {/* Hover Video */}
                 <div className="work-hover-image">
                   <video autoPlay loop muted playsInline>
-                    <source src={`${import.meta.env.BASE_URL}img/portlogo.mp4`} type="video/mp4" />
+                    <source src={`${import.meta.env.BASE_URL}img/Product label & packaging.mp4`} type="video/mp4" />
                   </video>
                 </div>
                 
@@ -465,6 +465,78 @@ function Home() {
                   <div className="work-title-row">
                     <span className="work-number">03.</span>
                     <h2 className="work-title">Product label & Packaging</h2>
+                  </div>
+                </div>
+                
+                {/* Divider Line */}
+                <div className="work-divider"></div>
+              </Link>
+
+              <Link
+                to="/portfolio"
+                className="work-item-portfolio"
+              >
+                {/* Hover Video */}
+                <div className="work-hover-image">
+                  <video autoPlay loop muted playsInline>
+                    <source src={`${import.meta.env.BASE_URL}img/Banner & hoarding.mp4`} type="video/mp4" />
+                  </video>
+                </div>
+                
+                {/* Content */}
+                <div className="work-content-portfolio">
+                  <span className="work-category">PRINTING</span>
+                  <div className="work-title-row">
+                    <span className="work-number">04.</span>
+                    <h2 className="work-title">Banner & Hoarding</h2>
+                  </div>
+                </div>
+                
+                {/* Divider Line */}
+                <div className="work-divider"></div>
+              </Link>
+
+              <Link
+                to="/portfolio"
+                className="work-item-portfolio"
+              >
+                {/* Hover Video */}
+                <div className="work-hover-image">
+                  <video autoPlay loop muted playsInline>
+                    <source src={`${import.meta.env.BASE_URL}img/Newspaper & Invitation.mp4`} type="video/mp4" />
+                  </video>
+                </div>
+                
+                {/* Content */}
+                <div className="work-content-portfolio">
+                  <span className="work-category">DESIGN</span>
+                  <div className="work-title-row">
+                    <span className="work-number">05.</span>
+                    <h2 className="work-title">News paper & Invitation</h2>
+                  </div>
+                </div>
+                
+                {/* Divider Line */}
+                <div className="work-divider"></div>
+              </Link>
+
+              <Link
+                to="/portfolio"
+                className="work-item-portfolio"
+              >
+                {/* Hover Video */}
+                <div className="work-hover-image">
+                  <video autoPlay loop muted playsInline>
+                    <source src={`${import.meta.env.BASE_URL}img/Book Cover And Magazine.mp4`} type="video/mp4" />
+                  </video>
+                </div>
+                
+                {/* Content */}
+                <div className="work-content-portfolio">
+                  <span className="work-category">PACKAGING</span>
+                  <div className="work-title-row">
+                    <span className="work-number">06.</span>
+                    <h2 className="work-title">Book Cover and Magazine</h2>
                   </div>
                 </div>
                 
@@ -485,7 +557,7 @@ function Home() {
             <div className="clients-track clients-track-1">
               {[...Array(18)].map((_, i) => (
                 <div key={i} className="client-logo">
-                  <img src={`/Final-Printolution/OUR CLIENT/${(i % 9) + 1}.png`} alt={`Client ${(i % 9) + 1}`} />
+                  <img src={`/OUR CLIENT/${(i % 9) + 1}.png`} alt={`Client ${(i % 9) + 1}`} />
                 </div>
               ))}
             </div>
@@ -494,7 +566,7 @@ function Home() {
             <div className="clients-track clients-track-2">
               {[...Array(16)].map((_, i) => (
                 <div key={i} className="client-logo">
-                  <img src={`/Final-Printolution/OUR CLIENT/${(i % 8) + 10}.png`} alt={`Client ${(i % 8) + 10}`} />
+                  <img src={`/OUR CLIENT/${(i % 8) + 10}.png`} alt={`Client ${(i % 8) + 10}`} />
                 </div>
               ))}
             </div>
@@ -508,11 +580,11 @@ function Home() {
             <h2 className="section-title">Join Us on Social Media</h2>
             <div className="social-gallery">
               {[
-                { img: '/Final-Printolution/img/Lemongrass.jpg', link: 'https://www.instagram.com/p/DRRdRJDjdxy/?igsh=bzI4Mnphb3I5OXNv' },
-                { img: '/Final-Printolution/img/billboard.jpg', link: 'https://www.instagram.com/p/DSC5gRsk7kf/?igsh=dmNiMGNiajIweW44' },
-                { img: '/Final-Printolution/img/box.jpg', link: 'https://www.instagram.com/p/DMhvQu7Tn8H/?igsh=bHRhczk3MHlmY3Rr' },
-                { img: '/Final-Printolution/img/hoarding.jpeg', link: 'https://www.instagram.com/p/DSCtb93jdz2/?igsh=MXF6MDZucHcyYnp6Mg==' },
-                { img: '/Final-Printolution/img/BodyLotion.jpeg', link: 'https://www.instagram.com/p/DRRdbDujfTt/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==' }
+                { img: '/img/Lemongrass.jpg', link: 'https://www.instagram.com/p/DRRdRJDjdxy/?igsh=bzI4Mnphb3I5OXNv' },
+                { img: '/img/billboard.jpg', link: 'https://www.instagram.com/p/DSC5gRsk7kf/?igsh=dmNiMGNiajIweW44' },
+                { img: '/img/box.jpg', link: 'https://www.instagram.com/p/DMhvQu7Tn8H/?igsh=bHRhczk3MHlmY3Rr' },
+                { img: '/img/hoarding.jpeg', link: 'https://www.instagram.com/p/DSCtb93jdz2/?igsh=MXF6MDZucHcyYnp6Mg==' },
+                { img: '/img/BodyLotion.jpeg', link: 'https://www.instagram.com/p/DRRdbDujfTt/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==' }
               ].map((item, i) => (
                 <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" className="social-gallery-item">
                   <img src={item.img} alt={`Instagram post ${i + 1}`} />

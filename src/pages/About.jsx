@@ -63,7 +63,11 @@ function About() {
               <p>We believe that every project tells a story, and our mission is to bring those stories to life with precision, creativity, and care. From startups to established brands, we've partnered with businesses to create impactful designs and high-quality prints that leave a lasting impression.</p>
             </div>
             <div className="story-image">
-              <div className="image-placeholder"></div>
+              <img 
+                src="/img/Main logo.png" 
+                alt="Printolution Logo" 
+                className="story-logo"
+              />
             </div>
           </div>
         </div>
@@ -81,7 +85,7 @@ function About() {
                 
              
               <div className="profile-pic">
-                <img src="/Final-Printolution/img/rutu.jpg" alt="Rutvi Vekariya" />
+                <img src="/img/rutu.jpg" alt="Rutvi Vekariya" />
               </div>
               <div className="bottom">
                 <div className="content">
@@ -106,7 +110,7 @@ function About() {
             <div className="card">
           
               <div className="profile-pic">
-                <img src="/Final-Printolution/img/jatin.jpg" alt="Jatin Kateliya" />
+                <img src="/img/jatin.jpg" alt="Jatin Kateliya" />
               </div>
               <div className="bottom">
                 <div className="content">

@@ -813,7 +813,7 @@ section::before {
 }
 
 .mockup-1 {
-    background-image: url('/Final-Printolution/img/hoarding-2.jpg');
+    background-image: url('/img/hoarding-2.jpg');
     background-color: #FFC107;
     transform: translateX(-120px) translateY(0) scale(0.9) rotate(-8deg);
     animation-delay: 0.3s;
@@ -821,7 +821,7 @@ section::before {
 }
 
 .mockup-2 {
-    background-image: url('/Final-Printolution/img/lavender.jpg');
+    background-image: url('/img/lavender.jpg');
     background-color: #000000;
     transform: translateX(0) translateY(0) scale(0.95) rotate(0deg);
     animation-delay: 0.5s;
@@ -829,7 +829,7 @@ section::before {
 }
 
 .mockup-3 {
-    background-image: url('/Final-Printolution/img/box.jpg');
+    background-image: url('/img/box.jpg');
     background-color: #FFFFFF;
     transform: translateX(120px) translateY(0) scale(1) rotate(8deg);
     animation-delay: 0.7s;

@@ -85,9 +85,9 @@ const Section3D = ({ section, index }) => {
             <motion.div className="contact-card-3d" whileHover={{ scale: 1.02, boxShadow: '0 20px 60px rgba(255,193,7,0.3)' }}>
               <div className="contact-glow" />
               <p><strong>Printolution</strong></p>
-              <p>Email: <a href="mailto:printolutionrjk@gmail.com">printolutionrjk@gmail.com</a></p>
-              <p>Phone: <a href="tel:+919724718880">+91 97247 18880</a></p>
-              <p>Address: Rajkot, Gujarat, India - 360001</p>
+              <p>Email: <a href="mailto:printolution2025@gmail.com">printolution2025@gmail.com</a></p>
+              <p>Phone: <a href="tel:+919773154466">+91 97731 54466</a></p>
+              <p>Address: Ahmedabad, Gujarat, India - 380001</p>
             </motion.div>
           )}
         </motion.div>
@@ -123,7 +123,6 @@ function Disclaimer() {
   return (
     <div className="legal-page-ultra" ref={containerRef}>
       <motion.div className="scroll-progress-bar" style={{ scaleX }} />
-      <FloatingParticles />
       <div className="cyber-grid" />
       
       <section className="legal-hero-ultra disclaimer-hero">

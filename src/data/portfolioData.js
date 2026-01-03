@@ -122,10 +122,10 @@ export const portfolioData = {
   },
   'business-profile-magazine': {
     id: 6,
-    title: 'Business Profile & Magazine',
-    category: 'PACKAGING',
-    description: 'Professional business profiles and magazine layouts that tell your story compellingly.',
-    fullDescription: 'We create comprehensive business profiles and magazine layouts that showcase your company\'s achievements, services, and vision in a professional and engaging manner.',
+    title: 'Book Cover & Magazine',
+    category: 'DESIGN',
+    description: 'Creative book covers and magazine layouts that capture attention and tell compelling stories.',
+    fullDescription: 'We create eye-catching book covers and professional magazine layouts that stand out in the market. Our designs combine artistic creativity with strategic marketing to ensure your publications make a lasting impression on readers.',
     images: [
       `${import.meta.env.BASE_URL}img/designing.jpg`,
       `${import.meta.env.BASE_URL}img/brand.jpg`,
@@ -133,12 +133,12 @@ export const portfolioData = {
       `${import.meta.env.BASE_URL}img/allin.jpg`
     ],
     features: [
-      'Company Profiles',
+      'Book Cover Design',
       'Magazine Layout',
-      'Annual Reports',
-      'Corporate Brochures',
+      'Editorial Design',
+      'Typography Selection',
       'Multi-page Design',
-      'Professional Photography'
+      'Print & Digital Ready'
     ]
   }
 }

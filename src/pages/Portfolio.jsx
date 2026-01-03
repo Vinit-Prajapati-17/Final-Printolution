@@ -10,7 +10,7 @@ function Portfolio() {
       number: '01',
       category: 'DESIGN',
       title: 'Logo Design & Branding',
-      image: `${import.meta.env.BASE_URL}img/log 1.png`,
+      video: '/img/portlogo.mp4',
       link: '/portfolio/logo-design-branding'
     },
     {
@@ -18,7 +18,7 @@ function Portfolio() {
       number: '02',
       category: 'BRANDING',
       title: 'Broucher & Catalogue',
-      image: `${import.meta.env.BASE_URL}img/log 2.png`,
+      video: '/img/Broucher & Catalogue.mp4',
       link: '/portfolio/broucher-catalogue'
     },
     {
@@ -26,7 +26,7 @@ function Portfolio() {
       number: '03',
       category: 'BRANDING',
       title: ' Product label & Packaging',
-      image: `${import.meta.env.BASE_URL}img/log 3.png`,
+      video: '/img/Product label & packaging.mp4',
       link: '/portfolio/product-label-packaging'
     },
     {
@@ -34,7 +34,7 @@ function Portfolio() {
       number: '04',
       category: 'PRINTING',
       title: ' Banner & Hoarding',
-      image: `${import.meta.env.BASE_URL}img/log 4.png`,
+      video: '/img/Banner & hoarding.mp4',
       link: '/portfolio/banner-hoarding'
     },
     {
@@ -42,15 +42,15 @@ function Portfolio() {
       number: '05',
       category: 'DESIGN',
       title: ' News paper & Invitation',
-      image: `${import.meta.env.BASE_URL}img/log 5.png`,
+      video: '/img/Newspaper & Invitation.mp4',
       link: '/portfolio/newspaper-invitation'
     },
     {
       id: 6,
       number: '06',
       category: 'PACKAGING',
-      title: ' BUSINESS Profile and MAGAZINE',
-      image: `${import.meta.env.BASE_URL}img/box.jpg`,
+      title: ' Book Cover And Magazine',
+      video: '/img/Book Cover And Magazine.mp4',
       link: '/portfolio/business-profile-magazine'
     }
   ]
@@ -117,9 +117,11 @@ function Portfolio() {
                 onMouseEnter={() => setHoveredItem(service.id)}
                 onMouseLeave={() => setHoveredItem(null)}
               >
-                {/* Hover Image */}
+                {/* Hover Video */}
                 <div className="service-hover-image">
-                  <img src={service.image} alt={service.title} />
+                  <video autoPlay loop muted playsInline style={{ objectPosition: 'center' }}>
+                    <source src={service.video} type="video/mp4" />
+                  </video>
                 </div>
                 
                 {/* Content */}

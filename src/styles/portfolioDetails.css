@@ -7,6 +7,12 @@
   padding: 0;
 }
 
+/* Portfolio Details Page Container */
+.portfolio-details-page {
+  padding-top: 80px; /* Account for fixed header */
+  min-height: 100vh;
+}
+
 /* Timeline Container */
 .timeline-container {
   width: 100%;
@@ -50,6 +56,7 @@
   max-width: 80rem;
   margin: 0 auto;
   padding-bottom: 5rem;
+  min-height: 100vh;
 }
 
 /* Timeline Item */
@@ -87,26 +94,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.25);
   border: 4px solid #FFFFFF;
   margin-bottom: 1rem;
-  transition: all 0.3s ease;
-  animation: markerPulse 2s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
 }
 
 .timeline-marker:hover {
-  transform: scale(1.1);
-  box-shadow: 0 15px 35px rgba(255, 193, 7, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 193, 7, 0.35);
 }
 
-@keyframes markerPulse {
-  0%, 100% {
-    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3);
-  }
-  50% {
-    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.5);
-  }
-}
+/* Removed heavy pulse animation for better performance */
 
 .timeline-marker-dot {
   height: 0.75rem;
@@ -445,30 +445,37 @@
 .image-container {
   position: relative;
   overflow: hidden;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  group: hover;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: 1px solid #e5e7eb;
   background: #ffffff;
   aspect-ratio: 16/10;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Branding Image Container - Vertical Rectangle */
+/* Branding Image Container - Optimized */
 .branding-image-container {
   position: relative;
   overflow: hidden;
-  border-radius: 1rem;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  transition: all 0.3s ease;
-  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #e5e7eb;
   background: #ffffff;
   aspect-ratio: 3/4;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image-container:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
   border-color: #FFC107;
 }
 
@@ -480,10 +487,10 @@
 
 .image-container img {
   width: 100%;
-  height: 10rem;
+  height: 100%;
   object-fit: contain;
   object-position: center;
-  transition: transform 0.3s ease;
+  transition: none;
   background: #ffffff;
   padding: 1rem;
 }
@@ -491,13 +498,14 @@
 .branding-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  transition: transform 0.3s ease;
+  transition: none;
+  padding: 1rem;
 }
 
 .image-container:hover img {
-  transform: scale(1.05);
+  transform: none;
 }
 
 .branding-image-container:hover img {
@@ -569,37 +577,27 @@
   box-shadow: 0 4px 15px rgba(0, 168, 232, 0.3);
 }
 
-/* Timeline Line */
+/* Timeline Line - Extended Static Line */
 .timeline-line {
   position: absolute;
-  left: calc(9rem + 1rem - 1.8px);
+  left: calc(9rem + 1rem - 2px);
   top: 0;
-  overflow: hidden;
   width: 4px;
   background: #e5e7eb;
   border-radius: 2px;
   z-index: 20;
-}
-
-.timeline-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 4px;
-  background: linear-gradient(180deg, #FFC107 0%, #E91E8C 100%);
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+  min-height: 100%;
 }
 
 /* Not Found Styles */
 .not-found-container {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px); /* Account for header height */
   background: #FFFFFF;
   color: #2D3748;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 2rem;
 }
 
 .not-found-content {
@@ -624,6 +622,10 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .portfolio-details-page {
+    padding-top: 70px; /* Adjust for smaller header on tablets */
+  }
+  
   .image-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.2rem;
@@ -636,6 +638,10 @@
 }
 
 @media (max-width: 768px) {
+  .portfolio-details-page {
+    padding-top: 60px; /* Adjust for mobile header */
+  }
+  
   .timeline-container {
     padding: 0 1rem;
   }
@@ -690,7 +696,16 @@
   }
   
   .timeline-line {
-    display: none;
+    display: block;
+    position: absolute;
+    left: calc(2.5rem / 2 - 2px);
+    top: 0;
+    width: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    z-index: 10;
+    min-height: 100%;
+    height: auto;
   }
   
   .timeline-card {
@@ -761,6 +776,10 @@
 }
 
 @media (max-width: 480px) {
+  .portfolio-details-page {
+    padding-top: 60px; /* Maintain mobile header spacing */
+  }
+  
   .timeline-container {
     padding: 0 0.75rem;
   }
@@ -846,5 +865,75 @@
   .btn-secondary {
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
+  }
+}
+/* Brochure Image List - Optimized Single Column Layout */
+.brochure-image-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.brochure-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  will-change: transform;
+}
+
+.brochure-image-container:hover {
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.15);
+  transform: translateY(-2px);
+  border-color: #FFC107;
+}
+
+.brochure-image-container img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  object-position: center;
+  transition: none;
+  display: block;
+  loading: lazy;
+}
+
+/* Remove heavy hover animations */
+.brochure-image-container:hover img {
+  transform: none;
+}
+
+/* Optimized responsive styles */
+@media (max-width: 768px) {
+  .brochure-image-list {
+    gap: 1.5rem;
+  }
+  
+  .brochure-image-container {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0.25rem;
+  }
+  
+  .brochure-image-container img {
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brochure-image-list {
+    gap: 1rem;
+  }
+  
+  .brochure-image-container img {
+    max-height: 250px;
   }
 }

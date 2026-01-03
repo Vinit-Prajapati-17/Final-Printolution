@@ -1,6 +1,5 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import Lenis from 'lenis'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -16,38 +15,10 @@ import PortfolioDetails from './pages/PortfolioDetails'
 import SmoothCursor from './components/SmoothCursor'
 
 function App() {
-  const lenisRef = useRef(null)
   const { pathname } = useLocation()
-
-  // Initialize Lenis smooth scrolling
-  useEffect(() => {
-    lenisRef.current = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      smoothWheel: true,
-    })
-
-    window.lenis = lenisRef.current
-
-    function raf(time) {
-      lenisRef.current?.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-    return () => {
-      lenisRef.current?.destroy()
-      window.lenis = null
-    }
-  }, [])
 
   // Scroll to top when route changes
   useEffect(() => {
-    if (lenisRef.current) {
-      lenisRef.current.scrollTo(0, { immediate: true })
-    }
     window.scrollTo(0, 0)
   }, [pathname])
 

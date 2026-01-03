@@ -29,7 +29,7 @@ function Header() {
         <div className="container">
           <div className="header-content">
             <Link to="/" className="logo">
-              <img src="/Final-Printolution/img/Main logo.png" alt="Printolution - Serving Your Concept to Reality" className="logo-img" />
+              <img src="/img/Main logo.png" alt="Printolution - Serving Your Concept to Reality" className="logo-img" />
             </Link>
             <nav className={`nav ${isMenuOpen ? 'active' : ''}`} id="nav">
               <ul className="nav-list">

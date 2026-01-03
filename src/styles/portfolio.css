@@ -2,6 +2,7 @@
 
 .portfolio-page {
   min-height: 100vh;
+  background: #000000; /* Ensure pitch black background */
 }
 
 /* Hero Section - Marquee Style */
@@ -121,9 +122,9 @@
   }
 }
 
-/* Services List Section - Dark Background */
+/* Services List Section - Pitch Black Background */
 .services-list-section {
-  background: #0f0f0f;
+  background: #000000;
   padding: 80px 0 120px;
   position: relative;
   min-height: 100vh;
@@ -132,6 +133,7 @@
 .services-list {
   display: flex;
   flex-direction: column;
+  background: #000000; /* Ensure pitch black background */
 }
 
 .service-item {
@@ -156,8 +158,8 @@
   transform: translate(-50%, -50%);
   width: auto;
   height: auto;
-  max-width: 280px;
-  max-height: 350px;
+  width: 70vw;
+  height: 65vh;
   overflow: visible;
   opacity: 0;
   pointer-events: none;
@@ -170,10 +172,12 @@
   opacity: 0.35;
 }
 
-.service-hover-image img {
+.service-hover-image img,
+.service-hover-image video {
   width: 100%;
   height: auto;
   object-fit: contain;
+  object-position: center;
 }
 
 /* Service Content */
@@ -261,8 +265,8 @@
 /* Responsive */
 @media (max-width: 992px) {
   .service-hover-image {
-    max-width: 220px;
-    max-height: 280px;
+    width: 95vw;
+    height: 95vh;
   }
   
   .service-divider {
@@ -297,8 +301,8 @@
   }
   
   .service-hover-image {
-    max-width: 180px;
-    max-height: 220px;
+    width: 90vw;
+    height: 90vh;
   }
   
   .service-divider {
@@ -351,7 +355,7 @@
   }
   
   .service-hover-image {
-    max-width: 140px;
-    max-height: 180px;
+    width: 85vw;
+    height: 85vh;
   }
 }

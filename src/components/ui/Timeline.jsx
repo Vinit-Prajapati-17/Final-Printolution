@@ -1,29 +1,38 @@
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export const Timeline = ({ data }) => {
   const ref = useRef(null);
   const containerRef = useRef(null);
-  const [height, setHeight] = useState(0);
+  const [timelineHeight, setTimelineHeight] = useState(0);
 
   useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
-    }
-  }, [ref]);
+    const updateHeight = () => {
+      if (ref.current) {
+        // Get the full height including all content and margins
+        const rect = ref.current.getBoundingClientRect();
+        const computedStyle = window.getComputedStyle(ref.current);
+        const marginTop = parseInt(computedStyle.marginTop) || 0;
+        const marginBottom = parseInt(computedStyle.marginBottom) || 0;
+        const totalHeight = rect.height + marginTop + marginBottom;
+        
+        // Add extra height to ensure line extends through all content
+        setTimelineHeight(totalHeight + 100);
+      }
+    };
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 10%", "end 50%"],
-  });
-
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+    // Initial calculation
+    updateHeight();
+    
+    // Recalculate after a short delay to ensure all content is rendered
+    const timer = setTimeout(updateHeight, 100);
+    
+    window.addEventListener('resize', updateHeight);
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', updateHeight);
+    };
+  }, [data]);
 
   return (
     <div className="timeline-container" ref={containerRef}>
@@ -58,17 +67,15 @@ export const Timeline = ({ data }) => {
             </div>
           </div>
         ))}
-        <div
-          className="timeline-line"
-          style={{ height: height + "px" }}
+        
+        {/* Simple Static Line - Extended Length */}
+        <div 
+          className="timeline-line" 
+          style={{ 
+            height: Math.max(timelineHeight, 800) + "px" // Ensure minimum height
+          }}
         >
-          <motion.div
-            className="timeline-progress"
-            style={{
-              height: heightTransform,
-              opacity: opacityTransform,
-            }}
-          />
+          {/* No progress bar, just the static line */}
         </div>
       </div>
     </div>

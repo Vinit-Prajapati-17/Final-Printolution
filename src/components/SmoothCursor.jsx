@@ -55,17 +55,23 @@ const SmoothCursor = () => {
     const handleMouseEnter = (e) => {
       const target = e.target
       
-      // Check if hovering over interactive elements
-      if (target.matches('a, button, [role="button"], input, textarea, select, .clickable')) {
-        setIsHovering(true)
+      // Check if target is an Element and has matches method
+      if (target && typeof target.matches === 'function') {
+        if (target.matches('a, button, [role="button"], input, textarea, select, .clickable')) {
+          setIsHovering(true)
+        }
       }
     }
 
     const handleMouseLeave = (e) => {
       const target = e.target
       
-      // Only set to false if we're actually leaving an interactive element
-      if (!target.matches('a, button, [role="button"], input, textarea, select, .clickable')) {
+      // Check if target is an Element and has matches method
+      if (target && typeof target.matches === 'function') {
+        if (!target.matches('a, button, [role="button"], input, textarea, select, .clickable')) {
+          setIsHovering(false)
+        }
+      } else {
         setIsHovering(false)
       }
     }
