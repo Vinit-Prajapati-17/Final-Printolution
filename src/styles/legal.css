@@ -596,7 +596,7 @@
 
 /* Table of Contents */
 .legal-toc {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    background: #1a1a1a;
     border-radius: 16px;
     padding: 32px;
     margin-bottom: 60px;

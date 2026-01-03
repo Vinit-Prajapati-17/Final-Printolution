@@ -85,7 +85,7 @@ function About() {
                 
              
               <div className="profile-pic">
-                <img src="/img/rutu.jpg" alt="Rutvi Vekariya" />
+                <img src="/img/rutvi.JPG" alt="Rutvi Vekariya" />
               </div>
               <div className="bottom">
                 <div className="content">

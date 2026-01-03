@@ -576,7 +576,7 @@
     width: 80px;
     height: 80px;
     border-radius: 18px;
-    background: linear-gradient(135deg, var(--accent-yellow), #ffd95a);
+    background: var(--accent-yellow);
     display: flex;
     align-items: center;
     justify-content: center;

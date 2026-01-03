@@ -335,7 +335,7 @@
 .sidebar-card .card-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #FFC107, #FFD54F);
+    background: #FFC107;
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -433,7 +433,7 @@
 
 /* Highlight Card */
 .highlight-card {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: #1a1a1a;
     color: white;
 }
 
@@ -443,7 +443,7 @@
 }
 
 .highlight-card .card-icon {
-    background: linear-gradient(135deg, #FFC107, #FFD54F);
+    background: #FFC107;
 }
 
 .phone-link {
